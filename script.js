@@ -61,7 +61,6 @@ function showForm(type) {
     resetForm();
     inputName.focus();
 
-    // Update aria-expanded on buttons
     btnCouple.setAttribute('aria-expanded', type === 'couple' ? 'true' : 'false');
     btnPhotographer.setAttribute('aria-expanded', type === 'photographer' ? 'true' : 'false');
 }

@@ -1,0 +1,122 @@
+    /* Reset & base */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+        background: #FFFFFF;
+        color: #0D1B2A;
+        /* Charcoal Navy */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.6;
+        padding: 0 16px;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 36px;
+        background-color: #FFFFFF;
+        color: #0D1B2A;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        position: sticky;
+        top: 0;
+        z-index: 1001;
+        user-select: none;
+        border-bottom: 1px solid #e3e3e3;
+        height: 71px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        cursor: default;
+        user-select: none;
+    }
+
+    .logo img {
+        margin-top: 25px;
+        height: 400px;
+        width: 228px;
+        margin-left: -40px;
+    }
+
+    .login-btn {
+        background: #FF7043;
+        border: none;
+        color: white;
+        padding: 10px 28px;
+        border-radius: 28px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        user-select: none;
+        min-width: 110px;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        box-shadow: 0 4px 12px rgba(255, 112, 67, 0.45);
+    }
+
+    .login-btn:hover,
+    .login-btn:focus {
+        background-color: #e1532d;
+        box-shadow: 0 8px 20px rgba(225, 83, 45, 0.65);
+        outline: none;
+    }
+
+    main {
+        max-width: 960px;
+        margin: 40px auto;
+    }
+
+    h1 {
+        font-family: 'Cormorant Garamond', serif;
+        color: #FF7043;
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 24px;
+    }
+
+    h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        color: #F15C6D;
+        margin-top: 32px;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    ul {
+        list-style: disc inside;
+        margin-left: 0;
+        padding-left: 16px;
+        color: #222;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    p,
+    ul li {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+
+    a {
+        color: #FF7043;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+        outline: none;
+    }

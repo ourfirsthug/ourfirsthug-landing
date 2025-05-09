@@ -1,543 +1,145 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>ourfirsthug - Book the Best Wedding Photographers</title>
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-      background: #FFFFFF;
-      color: #0D1B2A; /* Charcoal Navy */
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      line-height: 1.5;
-      font-size: 16px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 36px;
-      background-color: #FFFFFF; /* same as body bg */
-      color: #0D1B2A; /* Charcoal Navy */
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      position: sticky;
-      top: 0;
-      z-index: 1001;
-      user-select: none;
-      border-bottom: 1px solid #e3e3e3;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      cursor: default;
-      user-select: none;
-    }
-    .logo img {
-      height: 40px;
-      width: auto;
-      display: block;
-    }
-    .logo span {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: #0D1B2A;
-      transition: color 0.3s ease;
-      user-select: none;
-    }
-    .logo:hover span {
-      color: #FF7043;
-    }
-    .login-btn {
-      background: #FF7043;
-      border: none;
-      color: white;
-      padding: 10px 28px;
-      border-radius: 28px;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      min-width: 110px;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      box-shadow: 0 4px 12px rgba(255, 112, 67, 0.45);
-    }
-    .login-btn:hover, .login-btn:focus {
-      background-color: #e1532d;
-      box-shadow: 0 8px 20px rgba(225, 83, 45, 0.65);
-      outline: none;
-    }
-
-    main.container {
-      max-width: 960px;
-      margin: 48px auto 40px;
-      padding: 0 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-      user-select: none;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-text {
-      flex: 1 1 380px;
-      max-width: 520px;
-      color: #0D1B2A;
-    }
-    .hero-text h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      font-size: clamp(2.5rem, 5vw, 3.25rem);
-      line-height: 1.1;
-      margin-bottom: 14px;
-      color: #FF7043;
-      letter-spacing: 0.02em;
-      user-select: text;
-      text-shadow: 0 1px 4px rgba(255,112,67,0.35);
-    }
-    .hero-text p {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 400;
-      font-size: 1.125rem;
-      line-height: 1.5;
-      color: #1a2a41; /* darker navy */
-      user-select: text;
-      margin-bottom: 36px;
-    }
-
-    .hero-image {
-      flex: 1 1 460px;
-      max-width: 540px;
-      border-radius: 16px;
-      overflow: hidden;
-      user-select: none;
-      box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
-      transition: box-shadow 0.3s ease;
-    }
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-      border-radius: 16px;
-      filter: none;
-      transition: filter 0.3s ease;
-    }
-    .hero-image:hover {
-      box-shadow: 0 10px 36px rgba(255, 112, 67, 0.12);
-    }
-
-    /* Buttons below hero text */
-    .main-buttons {
-      display: flex;
-      justify-content: flex-start;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .main-btn {
-      background-color: transparent;
-      color: #FF7043;
-      border: 2px solid #FF7043;
-      border-radius: 28px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 600;
-      font-size: 1.15rem;
-      padding: 14px 36px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      min-width: 160px;
-      user-select: none;
-      box-shadow: none;
-    }
-    .main-btn:hover, .main-btn:focus {
-      background-color: #FF7043;
-      color: white;
-      outline: none;
-    }
-    .main-btn.active {
-      background-color: #FF7043;
-      color: white;
-      box-shadow: none;
-      transform: translateY(-1px);
-    }
-
-    /* Form Section */
-    #form-section {
-      max-width: 480px;
-      background: #fafafa;
-      padding: 36px 32px 40px;
-      border-radius: 14px;
-      margin-left: auto;
-      margin-right: auto;
-      box-sizing: border-box;
-      display: none;
-      flex-direction: column;
-      user-select: text;
-      border-left: 4px solid #FF7043;
-      box-shadow: none;
-      transition: border-color 0.3s ease;
-    }
-    #form-section.show {
-      display: flex;
-      animation: fadeIn 0.35s ease forwards;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    #form-title {
-      font-family: 'Cormorant Garamond', serif;
-      color: #FF7043;
-      font-size: 2.1rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      text-align: left;
-      user-select: text;
-    }
-    #form-subtitle {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #555;
-      font-size: 1rem;
-      margin-bottom: 28px;
-      user-select: text;
-      line-height: 1.5;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    label {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 6px;
-      color: #0D1B2A;
-      user-select: none;
-      letter-spacing: 0.01em;
-    }
-    input[type="text"],
-    input[type="email"],
-    select {
-      width: 100%;
-      padding: 14px 18px;
-      border-radius: 8px;
-      border: 1.8px solid #cbc9c2;
-      font-size: 1rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #222;
-      background-color: #fff;
-      transition: border-color 0.3s ease;
-      font-weight: 500;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1l6 6 6-6' stroke='%236a5b4f' stroke-width='2' fill='none'/%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      background-size: 14px 10px;
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    select:focus {
-      border-color: #F15C6D;
-      outline: none;
-      background-color: #fff;
-      box-shadow: none;
-    }
-    .error-message {
-      color: #d9534f;
-      font-size: 0.85rem;
-      min-height: 18px;
-      font-weight: 600;
-      user-select: none;
-      margin-top: -14px;
-      margin-bottom: 8px;
-      letter-spacing: 0.015em;
-    }
-    .submit-btn {
-      background-color: #FF7043;
-      color: white;
-      border: none;
-      padding: 16px 0;
-      border-radius: 28px;
-      font-weight: 700;
-      font-size: 1.15rem;
-      cursor: pointer;
-      transition: background-color 0.35s ease;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      user-select: none;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      margin-top: 16px;
-      box-shadow: none;
-      filter: none;
-      text-shadow: none;
-    }
-    .submit-btn:disabled {
-      background-color: #e2e2e2;
-      color: #888;
-      cursor: not-allowed;
-    }
-    .submit-btn:hover:not(:disabled), .submit-btn:focus:not(:disabled) {
-      background-color: #d9534f;
-      outline: none;
-    }
-
-    /* Sections below form */
-    section.info-section {
-      border-top: 1px solid #d6dbd8;
-      padding-top: 24px;
-      margin-top: 24px;
-      max-width: 960px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #0D1B2A;
-      user-select: text;
-    }
-    section.info-section h2 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      font-size: 1.85rem;
-      margin-bottom: 18px;
-      color: #F15C6D; /* Rosy Red */
-      letter-spacing: 0.04em;
-      text-shadow: 0 0 4px #f15c6d77;
-    }
-    section.info-section h2 svg {
-      width: 25px;
-      height: 25px;
-      fill: #F15C6D;
-      flex-shrink: 0;
-    }
-    section.info-section p {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #2a3a4a;
-      margin-bottom: 16px;
-      max-width: 720px;
-    }
-    section.info-section a {
-      color: #FF7043;
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s ease;
-    }
-    section.info-section a:hover,
-    section.info-section a:focus {
-      color: #dd4b5d;
-      text-decoration: underline;
-      outline: none;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: auto;
-      padding: 24px 32px;
-      background-color: #0D1B2A;
-      color: #CADABA;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.9rem;
-      text-align: center;
-      user-select: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-    footer a {
-      color: #FF7043;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-    footer a:hover, footer a:focus {
-      color: #dd4b5d;
-      text-decoration: underline;
-      outline: none;
-    }
-    footer .social-links {
-      font-size: 1.3rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        gap: 28px;
-        align-items: center;
-      }
-      .hero-text, .hero-image {
-        max-width: 100%;
-        text-align: center;
-      }
-      .main-buttons {
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      .main-btn {
-        min-width: 50vw;
-      }
-      #form-section {
-        max-width: 90vw;
-        margin: 0 auto 32px;
-      }
-      section.info-section {
-        padding-top: 20px;
-        margin-top: 20px;
-      }
-      footer {
-        font-size: 0.85rem;
-        padding: 20px 16px;
-      }
-      footer .social-links a {
-        margin: 0 10px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .main-btn {
-        width: 100%;
-        min-width: unset;
-      }
-      .hero-image img {
-        border-radius: 12px;
-      }
-      footer {
-        font-size: 0.8rem;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>OurFirstHug - Book the Best Wedding Photographers</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body>
 
-  <nav role="navigation" aria-label="Primary navigation">
-    <div class="logo" aria-label="ourfirsthug brand logo">ourfirsthug</div>
-    <button class="login-btn" id="login-button" aria-label="Login to your account">Login</button>
-  </nav>
-
-  <main class="container" role="main" aria-label="Homepage main content">
-
-    <section class="hero" aria-label="Main hero section">
-      <div class="hero-text">
-        <h1>Book the best wedding photographers quickly and easily.</h1>
-        <p>We’re building something special for modern Indian weddings—a platform where couples and photographers find each other with zero hassle, full trust, and total joy. It’s almost ready. Want it early?</p>
-        <div class="main-buttons" role="group" aria-label="Call to actions">
-          <button class="main-btn" id="btn-couple" aria-controls="form-section" aria-expanded="false">I’m a Couple</button>
-          <button class="main-btn" id="btn-photographer" aria-controls="form-section" aria-expanded="false">I’m a Photographer</button>
+    <nav role="navigation" aria-label="Primary navigation">
+        <div class="logo" aria-label="ourfirsthug brand logo">
+            <img src="logo.png" alt="ourfirsthug logo" />
         </div>
-      </div>
-      <div class="hero-image" id="hero-image" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80" alt="Bride and groom sharing a joyful moment during wedding photography" />
-      </div>
-    </section>
+        <button class="login-btn" id="login-button" aria-label="Login to your account">Login</button>
+    </nav>
 
-    <section id="form-section" aria-label="Waitlist signup form" aria-hidden="true" tabindex="0">
-      <h2 id="form-title">Join the Waitlist</h2>
-      <p id="form-subtitle" style="margin-bottom:24px; font-weight: 500; font-size: 1rem; color: #495463;">
-        Please enter your details below to get early access.
-      </p>
+    <main class="container" role="main" aria-label="Homepage main content">
 
-      <form id="waitlist-form" novalidate>
-        <div class="form-group">
-          <label for="name-input">Name</label>
-          <input type="text" id="name-input" name="name" autocomplete="name" placeholder="Your full name" required aria-required="true" />
-          <span class="error-message" id="error-name" aria-live="polite"></span>
+        <section class="hero" aria-label="Main hero section">
+            <div class="hero-text">
+                <h1>Book the best wedding photographers quickly and easily.</h1>
+                <p>We’re building something special for modern Indian weddings—a platform where couples and
+                    photographers find each other with zero hassle, full trust, and total joy. It’s almost ready. Want
+                    it early?</p>
+                <div class="main-buttons" role="group" aria-label="Call to actions">
+                    <button class="main-btn" id="btn-couple" aria-controls="form-section" aria-expanded="false">I’m a
+                        Couple</button>
+                    <button class="main-btn" id="btn-photographer" aria-controls="form-section"
+                        aria-expanded="false">I’m a Photographer</button>
+                </div>
+            </div>
+            <div class="hero-image" id="hero-image" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+                    alt="Bride and groom sharing a joyful moment during wedding photography" />
+            </div>
+        </section>
+
+        <section id="form-section" aria-label="Waitlist signup form" aria-hidden="true" tabindex="0">
+            <h2 id="form-title">Join the Waitlist</h2>
+            <p id="form-subtitle" style="margin-bottom:24px; font-weight: 500; font-size: 1rem; color: #495463;">
+                Please enter your details below to get early access.
+            </p>
+
+            <form id="waitlist-form" novalidate>
+                <div class="form-group">
+                    <label for="name-input">Name</label>
+                    <input type="text" id="name-input" name="name" autocomplete="name" placeholder="Your full name"
+                        required aria-required="true" />
+                    <span class="error-message" id="error-name" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email-input">Email</label>
+                    <input type="email" id="email-input" name="email" autocomplete="email"
+                        placeholder="example@mail.com" required aria-required="true" />
+                    <span class="error-message" id="error-email" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <label for="city-input">City</label>
+                    <select id="city-input" name="city" required aria-required="true" aria-describedby="city-desc">
+                        <option value="" disabled selected>Select your city</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <small id="city-desc" style="color:#888; font-size:0.85rem; user-select:none;">Choose your city from
+                        the list.</small>
+                    <span class="error-message" id="error-city" aria-live="polite"></span>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn" disabled>Join the Waitlist</button>
+            </form>
+        </section>
+
+        <section class="info-section" id="about-us" tabindex="0">
+            <h2><i class="fas fa-info-circle" aria-hidden="true"></i> About Us</h2>
+            <p>ourfirsthug is a platform currently under development. We are building a service to help couples discover
+                and connect with wedding photographers in their city. At this stage, we are collecting interest from
+                photographers and couples through a waitlist.</p>
+            <div class="founders">
+                <div class="founder">
+                    <img src="CEO.jpg" alt="CEO Divyansh Nigam" />
+                    <div class="founder-name">Divyansh Nigam - Founder & CEO</div>
+                </div>
+                <div class="founder">
+                    <img src="CTO.jpeg" alt="CTO Aman Pandey" />
+                    <div class="founder-name">Aman Pandey - CTO</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section" id="terms-of-use" tabindex="0">
+            <h2><i class="fas fa-file-contract" aria-hidden="true"></i> Terms of Use</h2>
+            <p>Welcome to ourfirsthug. By using our site, you agree to our terms that govern your use. We aim to provide
+                a reliable platform collecting waitlist information while respecting your rights and privacy. Find the full terms & conditions <a href="termsandconditions.html" target="_blank">Terms & Conditions</a>
+            </p>
+        </section>
+
+        <section class="info-section" id="privacy-policy" tabindex="0">
+            <h2><i class="fas fa-user-shield" aria-hidden="true"></i> Privacy Policy</h2>
+            <p>Your privacy matters to us. We collect only the necessary personal information to offer you early access
+                and keep you informed. We never share or sell your data to third parties.</p>
+        </section>
+
+        <section class="info-section" id="contact-us" tabindex="0">
+            <h2><i class="fas fa-envelope" aria-hidden="true"></i> Contact Us</h2>
+            <p>If you have any queries or need assistance, you can reach us by email or WhatsApp. We are here to ensure
+                you have a smooth experience.</p>
+            <p>
+                <i class="fab fa-whatsapp" aria-hidden="true" style="color:#25d366;"></i>
+                <a href="https://wa.me/yourwhatsappphonenumber" target="_blank" rel="noopener"
+                    aria-label="Chat on WhatsApp">Chat with us on WhatsApp</a><br />
+                <i class="fas fa-envelope" aria-hidden="true" style="color:#0072c6;"></i>
+                <a href="mailto:hello@ourfirsthug.com">hello@ourfirsthug.com</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        © 2024 ourfirsthug. All rights reserved.
+        <br />
+        <div class="social-links" aria-label="Social media links">
+            <a href="https://www.youtube.com/channel/UCyourchannel" target="_blank" rel="noopener"
+                aria-label="YouTube channel"><i class="fab fa-youtube" style="vertical-align: middle;"></i> YouTube</a>
+            |
+            <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener"
+                aria-label="Instagram profile"><i class="fab fa-instagram" style="vertical-align: middle;"></i>
+                Instagram</a>
         </div>
-        <div class="form-group">
-          <label for="email-input">Email</label>
-          <input type="email" id="email-input" name="email" autocomplete="email" placeholder="example@mail.com" required aria-required="true" />
-          <span class="error-message" id="error-email" aria-live="polite"></span>
-        </div>
-        <div class="form-group">
-          <label for="city-input">City</label>
-          <select id="city-input" name="city" required aria-required="true" aria-describedby="city-desc">
-            <option value="" disabled selected>Select your city</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Bangalore">Bangalore</option>
-            <option value="Chennai">Chennai</option>
-            <option value="Kolkata">Kolkata</option>
-            <option value="Hyderabad">Hyderabad</option>
-            <option value="Pune">Pune</option>
-            <option value="Ahmedabad">Ahmedabad</option>
-            <option value="Jaipur">Jaipur</option>
-            <option value="Other">Other</option>
-          </select>
-          <small id="city-desc" style="color:#888; font-size:0.85rem; user-select:none;">Choose your city from the list.</small>
-          <span class="error-message" id="error-city" aria-live="polite"></span>
-        </div>
-        <button type="submit" class="submit-btn" id="submit-btn" disabled>Join the Waitlist</button>
-      </form>
-    </section>
+    </footer>
 
-    <!-- Additional Sections -->
-    <section class="info-section" id="about-us" tabindex="0">
-      <h2><i class="fas fa-info-circle" aria-hidden="true"></i> About Us</h2>
-      <p>At ourfirsthug, we bring together couples and wedding photographers in India with love, creativity, and trust. Our platform makes it effortless to find the perfect photographer who truly understands your story.</p>
-    </section>
-
-    <section class="info-section" id="terms-of-use" tabindex="0">
-      <h2><i class="fas fa-file-contract" aria-hidden="true"></i> Terms of Use</h2>
-      <p>Welcome to ourfirsthug. By using our site, you agree to our terms that govern your use. We aim to provide a reliable platform collecting waitlist information while respecting your rights and privacy.</p>
-    </section>
-
-    <section class="info-section" id="privacy-policy" tabindex="0">
-      <h2><i class="fas fa-user-shield" aria-hidden="true"></i> Privacy Policy</h2>
-      <p>Your privacy matters to us. We collect only the necessary personal information to offer you early access and keep you informed. We never share or sell your data to third parties.</p>
-    </section>
-
-    <section class="info-section" id="contact-us" tabindex="0">
-      <h2><i class="fas fa-envelope" aria-hidden="true"></i> Contact Us</h2>
-      <p>Have questions? Reach out to us anytime at <a href="mailto:hello@ourfirsthug.com">hello@ourfirsthug.com</a>. We're here to help make your wedding photography experience extraordinary.</p>
-    </section>
-  </main>
-
-  <footer>
-    © 2024 ourfirsthug. All rights reserved.
-    <br />
-    <div class="social-links" aria-label="Social media links">
-      <a href="https://www.youtube.com/channel/UCyourchannel" target="_blank" rel="noopener" aria-label="YouTube channel"><i class="fab fa-youtube" style="vertical-align: middle;"></i> YouTube</a> | 
-      <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram profile"><i class="fab fa-instagram" style="vertical-align: middle;"></i> Instagram</a>
-    </div>
-  </footer>
-
-  <div id="thank-you" class="thank-you-message" role="alert" aria-live="assertive" aria-atomic="true" hidden style="
+    <div id="thank-you" class="thank-you-message" role="alert" aria-live="assertive" aria-atomic="true" hidden style="
     position: fixed;
     bottom: 28px;
     left: 50%;
@@ -560,172 +162,10 @@
     text-align: center;
     box-sizing: border-box;
   ">
-    Thank you! You’re on the list.
-  </div>
+        Thank you! You’re on the list.
+    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
-<script>
-  (() => {
-    const btnCouple = document.getElementById('btn-couple');
-    const btnPhotographer = document.getElementById('btn-photographer');
-    const heroImage = document.getElementById('hero-image').querySelector('img');
-    const formSection = document.getElementById('form-section');
-    const formTitle = document.getElementById('form-title');
-    const formSubtitle = document.getElementById('form-subtitle');
-
-    const form = document.getElementById('waitlist-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const inputName = document.getElementById('name-input');
-    const inputEmail = document.getElementById('email-input');
-    const inputCity = document.getElementById('city-input');
-
-    const errorName = document.getElementById('error-name');
-    const errorEmail = document.getElementById('error-email');
-    const errorCity = document.getElementById('error-city');
-
-    const thankYouMessage = document.getElementById('thank-you');
-
-    const coupleHeroImageSrc = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80";
-    const photographerHeroImageSrc = "https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-
-    const coupleFormSubtitle =
-      "We know the search is overwhelming. That’s why we’re creating a better way: a curated platform where you can discover trustworthy, talented photographers who truly get your story. Enter your details to get early access.";
-    const photographerFormSubtitle =
-      "We’re building a platform where you don’t have to fight for fair pay or chase clients. Just real bookings from couples who value your craft. Enter your details to get early access.";
-
-    let selectedType = null;
-
-    function updateHero(type) {
-      if(type === "couple") {
-        heroImage.src = coupleHeroImageSrc;
-        heroImage.alt = "Bride and groom sharing a joyful moment during wedding photography";
-        btnCouple.classList.add("active");
-        btnPhotographer.classList.remove("active");
-      } else {
-        heroImage.src = photographerHeroImageSrc;
-        heroImage.alt = "Photographer taking candid wedding photos";
-        btnPhotographer.classList.add("active");
-        btnCouple.classList.remove("active");
-      }
-    }
-
-    function updateForm(type) {
-      if(type === "couple") {
-        formTitle.textContent = "Join the Waitlist";
-        formSubtitle.textContent = coupleFormSubtitle;
-      } else {
-        formTitle.textContent = "Join the Waitlist";
-        formSubtitle.textContent = photographerFormSubtitle;
-      }
-    }
-
-    // Show form section with updated text and image
-    function showForm(type) {
-      selectedType = type;
-      formSection.style.display = "block";
-      formSection.setAttribute("aria-hidden", "false");
-      updateForm(type);
-      updateHero(type);
-      resetForm();
-      inputName.focus();
-
-      // Update aria-expanded on buttons
-      btnCouple.setAttribute('aria-expanded', type === 'couple' ? 'true' : 'false');
-      btnPhotographer.setAttribute('aria-expanded', type === 'photographer' ? 'true' : 'false');
-    }
-
-    function validateEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function validate() {
-      let valid = true;
-      if (!inputName.value.trim()) {
-        errorName.textContent = "Please enter your name.";
-        valid = false;
-      } else {
-        errorName.textContent = "";
-      }
-      if (!inputEmail.value.trim()) {
-        errorEmail.textContent = "Please enter your email.";
-        valid = false;
-      } else if (!validateEmail(inputEmail.value.trim())) {
-        errorEmail.textContent = "Please enter a valid email.";
-        valid = false;
-      } else {
-        errorEmail.textContent = "";
-      }
-      if (!inputCity.value.trim()) {
-        errorCity.textContent = "Please select your city.";
-        valid = false;
-      } else {
-        errorCity.textContent = "";
-      }
-      submitBtn.disabled = !valid;
-      return valid;
-    }
-
-    function resetForm() {
-      form.reset();
-      errorName.textContent = "";
-      errorEmail.textContent = "";
-      errorCity.textContent = "";
-      submitBtn.disabled = true;
-    }
-
-    function showThankYou(message) {
-      thankYouMessage.textContent = message;
-      thankYouMessage.hidden = false;
-      thankYouMessage.classList.add("show");
-      setTimeout(() => {
-        thankYouMessage.classList.remove("show");
-        setTimeout(() => {
-          thankYouMessage.hidden = true;
-        }, 600);
-      }, 3500);
-    }
-
-    function sendEmail() {
-      return new Promise(resolve => setTimeout(resolve, 1300));
-    }
-
-    btnCouple.addEventListener("click", () => showForm("couple"));
-    btnPhotographer.addEventListener("click", () => showForm("photographer"));
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if(!validate()) return;
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
-      try {
-        await sendEmail();
-        let message = selectedType === "couple" ?
-          "You’re on the list! We’ll reach out soon with early access so you can find your perfect photographer." :
-          "You’re in! We’ll reach out soon when early access opens in your city.";
-        alert(message);
-        showThankYou(message);
-        resetForm();
-      } catch {
-        alert("Something went wrong. Please try again later.");
-      } finally {
-        submitBtn.textContent = "Join the Waitlist";
-        validate();
-      }
-    });
-
-    [inputName, inputEmail, inputCity].forEach(input => {
-      input.addEventListener("input", validate);
-    });
-
-    document.getElementById("login-button").addEventListener("click", () => {
-      alert("Login functionality coming soon!");
-    });
-
-    formSection.style.display = "none";
-    btnCouple.setAttribute('aria-expanded', 'false');
-    btnPhotographer.setAttribute('aria-expanded', 'false');
-  })();
-</script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
