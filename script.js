@@ -17,8 +17,8 @@ const errorCity = document.getElementById('error-city');
 
 const thankYouMessage = document.getElementById('thank-you');
 
-const coupleHeroImageSrc = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80";
-const photographerHeroImageSrc = "https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+const coupleHeroImageSrc = "Couple.jpg";
+const photographerHeroImageSrc = "photographer.jpg";
 
 const coupleFormSubtitle =
     "We know the search is overwhelming. That’s why we’re creating a better way: a curated platform where you can discover trustworthy, talented photographers who truly get your story. Enter your details to get early access.";
@@ -129,6 +129,31 @@ form.addEventListener("submit", async (e) => {
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
     try {
+        const formData = {
+            name: 'John Doe',
+            email: 'johndoe@example.com',
+            city: 'New York',
+            user: 'johnny123',
+            mobile: '1234567890'
+        };
+
+        const apiUrl = 'https://script.google.com/macros/s/AKfycbyX-92mctrQLF8qaEN8n5LrxdU007kRqtCCtcMFtMFUoWa87AOtTlWocsF4aMA97jsVwg/exec';
+
+        // Call the POST API
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         await sendEmail();
         let message = selectedType === "couple" ?
             "You’re on the list! We’ll reach out soon with early access so you can find your perfect photographer." :
