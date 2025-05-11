@@ -34,7 +34,7 @@
             top: 0;
             z-index: 1001;
             user-select: none;
-            border-bottom: 1px solid #e3e3e3;
+            border-bottom: 3px solid #e3e3e3;
             height: 71px;
         }
 
@@ -57,19 +57,16 @@
             border: none;
             color: white;
             padding: 10px 28px;
-            border-radius: 28px;
+            border-radius: 16px;
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
             user-select: none;
             min-width: 110px;
-            text-transform: uppercase;
             letter-spacing: 0.07em;
             font-family: 'Plus Jakarta Sans', sans-serif;
             box-shadow: 0 4px 12px rgba(255, 112, 67, 0.45);
-            opacity: 0.5;
-            cursor: not-allowed;
         }
 
         .login-btn:hover,
@@ -160,16 +157,15 @@
 
         .main-btn {
             background-color: transparent;
-            color: #FF7043;
-            border: 2px solid #FF7043;
-            border-radius: 28px;
+            color: 0D1B2A;
+            border: 2px solid #0D1B2A;
+            border-radius: 16px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 600;
             font-size: 1.15rem;
             padding: 14px 36px;
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
-            text-transform: uppercase;
             letter-spacing: 0.04em;
             min-width: 160px;
             user-select: none;
@@ -181,6 +177,7 @@
             background-color: #FF7043;
             color: white;
             outline: none;
+            border: 2px solid #FF7043;
         }
 
         .main-btn.active {
@@ -188,6 +185,7 @@
             color: white;
             box-shadow: none;
             transform: translateY(-1px);
+            border: 2px solid #FF7043;
         }
 
         /* Form Section: minimal & elegant with subtle left accent */
@@ -284,7 +282,7 @@
         input[type="email"]:focus,
         input[type="tel"]:focus,
         select:focus {
-            border-color: #F15C6D;
+            border-color: #CADABA;
             outline: none;
             background-color: #fff;
             box-shadow: none;
@@ -310,13 +308,12 @@
             color: white;
             border: none;
             padding: 16px 0;
-            border-radius: 28px;
+            border-radius: 16px;
             font-weight: 700;
             font-size: 1.15rem;
             cursor: pointer;
             transition: background-color 0.35s ease;
             letter-spacing: 0.07em;
-            text-transform: uppercase;
             user-select: none;
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin-top: 16px;
@@ -539,7 +536,7 @@
         .about-heading {
             display: flex;
             align-items: center;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 36px;
             font-weight: 500;
             color: #FF7043;
@@ -563,7 +560,7 @@
         }
 
         .section-heading {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 36px;
             color: #FF7043;
             /* Burnt Sienna */
@@ -648,18 +645,16 @@
         footer.site-footer {
             flex-shrink: 0;
             width: 100%;
-            background-color: #0D1B2A;
             /* Charcoal Navy */
             color: #CADABA;
             /* Soft Sage Green */
             font-size: 14px;
             padding: 1rem 2rem;
-            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
             font-family: 'Plus Jakarta Sans', sans-serif;
+            border-top: 1px solid #CADABA;
         }
 
         .footer-content {
-            max-width: 900px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -667,6 +662,7 @@
         }
 
         .footer-left {
+            color:  #0D1B2A;
             user-select: none;
         }
 
@@ -676,7 +672,7 @@
         }
 
         .social-link {
-            color: #FF7043;
+            color:  #0D1B2A;
             /* Burnt Sienna */
             font-size: 24px;
             transition: color 0.3s ease;
@@ -696,4 +692,13 @@
                 gap: 0.8rem;
                 text-align: center;
             }
+        }
+
+        .footer-link {
+            color: #0D1B2A;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
         }

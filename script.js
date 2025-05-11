@@ -71,6 +71,11 @@ function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function validatePhone(phone) {
+    return /^[6-9]\d{9}$/.test(phone);
+}
+
+
 function validate() {
     let valid = true;
     if (!inputName.value.trim()) {
@@ -96,9 +101,13 @@ function validate() {
     }
 
     if(inputNumber.value) {
-        let phoneNumber = inputNumber.value.replace(/\D/g, ''); 
+        let phoneNumber = inputNumber.value.replace(/\D/g, '');
         if (phoneNumber.length < 10) {
             errorNumber.textContent = "Mobile cannot be less than 10 digits."
+            valid = false;
+        } else if(!validatePhone(inputNumber.value.trim())) {
+            errorNumber.textContent = "Please enter a valid mobile."
+            valid = false;
         }
     }
     submitBtn.disabled = !valid;
@@ -126,8 +135,25 @@ function showThankYou(message) {
     }, 3500);
 }
 
-function sendEmail() {
-    return new Promise(resolve => setTimeout(resolve, 1300));
+function sendEmail(emailData) {
+    return new Promise((resolve, reject) => {
+        fetch('https://ourfirsthug-email.onrender.com/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(emailData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Email sent successfully:", data);
+            resolve(data);
+        })
+        .catch(error => {
+            console.error("Error sending email:", error);
+            reject(error);
+        });
+    });
 }
 
 btnCouple.addEventListener("click", () => showForm("couple"));
@@ -150,10 +176,15 @@ form.addEventListener("submit", async (e) => {
             user: selectedType,
         };
 
+        const emailData = {
+            to: inputEmail.value,
+            name: inputName.value,
+            selectedType: selectedType
+        };
+
         const apiUrl = 'https://script.google.com/macros/s/AKfycbxKoNyA5wf681JkTfvSyntc9DCH5Z9kKbo8ateiw-wwUnJsfcd4GAhgPtx1jDjveTLnTw/exec';
 
-        // Call the POST API
-        const response = await fetch(apiUrl, {
+        await fetch(apiUrl, {
             method: 'POST',
             mode: 'no-cors',
             headers: {
@@ -161,16 +192,6 @@ form.addEventListener("submit", async (e) => {
             },
             body: JSON.stringify(formData),
         });
-
-        if (!response.ok) {
-            resetForm();
-        }
-
-        const data = await response.json();
-        console.log('Success:', data);
-
-        // If you need to send an email
-        await sendEmail();
 
         let message = selectedType === "couple" ?
             "You’re on the list! We’ll reach out soon with early access so you can find your perfect photographer." :
@@ -184,14 +205,14 @@ form.addEventListener("submit", async (e) => {
         console.error('Error:', error);
         alert("Something went wrong. Please try again later.");
     } finally {
-        submitBtn.disabled = false;
+        submitBtn.disabled = true;
         submitBtn.textContent = "Join the Waitlist";
-        validate();
+        await sendEmail();
     }
 });
 
 
-[inputName, inputEmail, inputCity].forEach(input => {
+[inputName, inputEmail, inputCity, inputNumber].forEach(input => {
     input.addEventListener("input", validate);
 });
 
@@ -206,3 +227,8 @@ document.getElementById('number-input').addEventListener('input', function() {
 formSection.style.display = "none";
 btnCouple.setAttribute('aria-expanded', 'false');
 btnPhotographer.setAttribute('aria-expanded', 'false');
+btnPhotographer.click();
+window.scrollTo({
+    top: 0,
+    behavior: 'smooth'  // Use 'auto' if you don't want smooth scroll
+  });
