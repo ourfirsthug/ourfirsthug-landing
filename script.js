@@ -18,7 +18,11 @@ const errorCity = document.getElementById('error-city');
 const errorNumber = document.getElementById('error-number');
 
 const thankYouMessage = document.getElementById('thank-you');
-
+var emailData = {
+    to: "",
+    name: "",
+    selectedType: ""
+};
 const coupleHeroImageSrc = "Couple.jpg";
 const photographerHeroImageSrc = "photographer.jpg";
 
@@ -176,7 +180,7 @@ form.addEventListener("submit", async (e) => {
             user: selectedType,
         };
 
-        const emailData = {
+        emailData = {
             to: inputEmail.value,
             name: inputName.value,
             selectedType: selectedType
