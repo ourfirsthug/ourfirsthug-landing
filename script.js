@@ -207,7 +207,7 @@ form.addEventListener("submit", async (e) => {
     } finally {
         submitBtn.disabled = true;
         submitBtn.textContent = "Join the Waitlist";
-        await sendEmail();
+        await sendEmail(emailData);
     }
 });
 
