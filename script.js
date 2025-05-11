@@ -10,10 +10,12 @@ const submitBtn = document.getElementById('submit-btn');
 const inputName = document.getElementById('name-input');
 const inputEmail = document.getElementById('email-input');
 const inputCity = document.getElementById('city-input');
+const inputNumber = document.getElementById('number-input');
 
 const errorName = document.getElementById('error-name');
 const errorEmail = document.getElementById('error-email');
 const errorCity = document.getElementById('error-city');
+const errorNumber = document.getElementById('error-number');
 
 const thankYouMessage = document.getElementById('thank-you');
 
@@ -92,6 +94,13 @@ function validate() {
     } else {
         errorCity.textContent = "";
     }
+
+    if(inputNumber.value) {
+        let phoneNumber = inputNumber.value.replace(/\D/g, ''); 
+        if (phoneNumber.length < 10) {
+            errorNumber.textContent = "Mobile cannot be less than 10 digits."
+        }
+    }
     submitBtn.disabled = !valid;
     return valid;
 }
@@ -101,6 +110,7 @@ function resetForm() {
     errorName.textContent = "";
     errorEmail.textContent = "";
     errorCity.textContent = "";
+    errorNumber.textContent = "";
     submitBtn.disabled = true;
 }
 
@@ -125,49 +135,61 @@ btnPhotographer.addEventListener("click", () => showForm("photographer"));
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     if (!validate()) return;
+
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
+
     try {
         const formData = {
-            name: 'John Doe',
-            email: 'johndoe@example.com',
-            city: 'New York',
-            user: 'johnny123',
-            mobile: '1234567890'
+            name: inputName.value,
+            email: inputEmail.value,
+            city: inputCity.value,
+            mobile: inputNumber.value,
+            user: selectedType,
         };
 
-        const apiUrl = 'https://script.google.com/macros/s/AKfycbyX-92mctrQLF8qaEN8n5LrxdU007kRqtCCtcMFtMFUoWa87AOtTlWocsF4aMA97jsVwg/exec';
+        const apiUrl = 'https://script.google.com/macros/s/AKfycbxKoNyA5wf681JkTfvSyntc9DCH5Z9kKbo8ateiw-wwUnJsfcd4GAhgPtx1jDjveTLnTw/exec';
 
         // Call the POST API
-        fetch(apiUrl, {
+        const response = await fetch(apiUrl, {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        });
+
+        if (!response.ok) {
+            resetForm();
+        }
+
+        const data = await response.json();
+        console.log('Success:', data);
+
+        // If you need to send an email
         await sendEmail();
+
         let message = selectedType === "couple" ?
             "You’re on the list! We’ll reach out soon with early access so you can find your perfect photographer." :
             "You’re in! We’ll reach out soon when early access opens in your city.";
+
         alert(message);
         showThankYou(message);
         resetForm();
-    } catch {
+
+    } catch (error) {
+        console.error('Error:', error);
         alert("Something went wrong. Please try again later.");
     } finally {
+        submitBtn.disabled = false;
         submitBtn.textContent = "Join the Waitlist";
         validate();
     }
 });
+
 
 [inputName, inputEmail, inputCity].forEach(input => {
     input.addEventListener("input", validate);
@@ -175,6 +197,10 @@ form.addEventListener("submit", async (e) => {
 
 document.getElementById("login-button").addEventListener("click", () => {
     alert("Login functionality coming soon!");
+});
+
+document.getElementById('number-input').addEventListener('input', function() {
+    errorNumber.textContent = "";
 });
 
 formSection.style.display = "none";
