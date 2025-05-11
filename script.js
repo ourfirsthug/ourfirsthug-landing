@@ -3,8 +3,8 @@ const btnPhotographer = document.getElementById('btn-photographer');
 const heroImage = document.getElementById('hero-image').querySelector('img');
 const formSection = document.getElementById('form-section');
 const formTitle = document.getElementById('form-title');
-const formSubtitle = document.getElementById('form-subtitle');
-
+const formSubtitle = document.getElementById('tagline-subtext');
+const tagLine = document.getElementById('tagline-text');
 const form = document.getElementById('waitlist-form');
 const submitBtn = document.getElementById('submit-btn');
 const inputName = document.getElementById('name-input');
@@ -27,9 +27,10 @@ const coupleHeroImageSrc = "Couple.jpg";
 const photographerHeroImageSrc = "photographer.jpg";
 
 const coupleFormSubtitle =
-    "We know the search is overwhelming. That’s why we’re creating a better way: a curated platform where you can discover trustworthy, talented photographers who truly get your story. Enter your details to get early access.";
+    "We know the search is overwhelming. That’s why we’re creating a better way: a curated platform where you can discover trustworthy, talented photographers who truly get your story. All in one place, built with love."
+const coupleFormSubtitlePart2 = "Tired of endless calls, fake ratings, and overpriced photographers? We’re building a simpler, smarter way to book photographers you can trust, someone who truly gets your story—without blowing your budget or losing your mind.";
 const photographerFormSubtitle =
-    "We’re building a platform where you don’t have to fight for fair pay or chase clients. Just real bookings from couples who value your craft. Enter your details to get early access.";
+    "We’re building a platform where you don’t have to fight for fair pay, justify your rates, or chase couples who ghost. Just real bookings from couples who understand the value of your work—and treat you like a professional.";
 
 let selectedType = null;
 
@@ -48,9 +49,10 @@ function updateHero(type) {
 }
 
 function updateForm(type) {
+    updateTagLine(type);
     if (type === "couple") {
         formTitle.textContent = "Join the Waitlist";
-        formSubtitle.textContent = coupleFormSubtitle;
+        formSubtitle.innerHTML = coupleFormSubtitle + "<br></br>" + coupleFormSubtitlePart2;
     } else {
         formTitle.textContent = "Join the Waitlist";
         formSubtitle.textContent = photographerFormSubtitle;
@@ -65,10 +67,20 @@ function showForm(type) {
     updateForm(type);
     updateHero(type);
     resetForm();
-    inputName.focus();
+    setTimeout(() => {
+        inputName.focus();
+    }, 300);
 
     btnCouple.setAttribute('aria-expanded', type === 'couple' ? 'true' : 'false');
     btnPhotographer.setAttribute('aria-expanded', type === 'photographer' ? 'true' : 'false');
+}
+
+function updateTagLine(type) {
+    if (type === "couple") {
+        tagLine.innerHTML = "<h1 id='tagline-text'>Find your <span class='special-word'>perfect</span> wedding photographer without any stress</h1>";
+    } else {
+        tagLine.innerHTML = "<h1 id='tagline-text'>Work with couples who <span class='special-word'>value</span> your craft.</h1>"
+    }
 }
 
 function validateEmail(email) {
@@ -104,12 +116,12 @@ function validate() {
         errorCity.textContent = "";
     }
 
-    if(inputNumber.value) {
+    if (inputNumber.value) {
         let phoneNumber = inputNumber.value.replace(/\D/g, '');
         if (phoneNumber.length < 10) {
             errorNumber.textContent = "Mobile cannot be less than 10 digits."
             valid = false;
-        } else if(!validatePhone(inputNumber.value.trim())) {
+        } else if (!validatePhone(inputNumber.value.trim())) {
             errorNumber.textContent = "Please enter a valid mobile."
             valid = false;
         }
@@ -148,15 +160,15 @@ function sendEmail(emailData) {
             },
             body: JSON.stringify(emailData)
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Email sent successfully:", data);
-            resolve(data);
-        })
-        .catch(error => {
-            console.error("Error sending email:", error);
-            reject(error);
-        });
+            .then(response => response.json())
+            .then(data => {
+                console.log("Email sent successfully:", data);
+                resolve(data);
+            })
+            .catch(error => {
+                console.error("Error sending email:", error);
+                reject(error);
+            });
     });
 }
 
@@ -220,11 +232,7 @@ form.addEventListener("submit", async (e) => {
     input.addEventListener("input", validate);
 });
 
-document.getElementById("login-button").addEventListener("click", () => {
-    alert("Login functionality coming soon!");
-});
-
-document.getElementById('number-input').addEventListener('input', function() {
+document.getElementById('number-input').addEventListener('input', function () {
     errorNumber.textContent = "";
 });
 
@@ -235,4 +243,4 @@ btnPhotographer.click();
 window.scrollTo({
     top: 0,
     behavior: 'smooth'  // Use 'auto' if you don't want smooth scroll
-  });
+});
