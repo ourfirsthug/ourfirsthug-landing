@@ -17,7 +17,6 @@ const errorEmail = document.getElementById('error-email');
 const errorCity = document.getElementById('error-city');
 const errorNumber = document.getElementById('error-number');
 
-const thankYouMessage = document.getElementById('thank-you');
 var emailData = {
     to: "",
     name: "",
@@ -139,18 +138,6 @@ function resetForm() {
     submitBtn.disabled = true;
 }
 
-function showThankYou(message) {
-    thankYouMessage.textContent = message;
-    thankYouMessage.hidden = false;
-    thankYouMessage.classList.add("show");
-    setTimeout(() => {
-        thankYouMessage.classList.remove("show");
-        setTimeout(() => {
-            thankYouMessage.hidden = true;
-        }, 600);
-    }, 3500);
-}
-
 function sendEmail(emailData) {
     return new Promise((resolve, reject) => {
         fetch('https://ourfirsthug-email.onrender.com/send-email', {
@@ -214,7 +201,6 @@ form.addEventListener("submit", async (e) => {
             "You’re in! We’ll reach out soon when early access opens in your city.";
 
         alert(message);
-        showThankYou(message);
         resetForm();
 
     } catch (error) {

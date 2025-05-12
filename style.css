@@ -45,7 +45,7 @@
         .logo {
             display: flex;
             align-items: center;
-            cursor: default;
+            cursor: pointer;
             user-select: none;
         }
 
