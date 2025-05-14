@@ -38,7 +38,6 @@
             top: 0;
             z-index: 1001;
             user-select: none;
-            border-bottom: 3px solid #e3e3e3;
             height: 71px;
         }
 
@@ -407,7 +406,7 @@
         @media (max-width: 900px) {
             .hero {
                 flex-direction: column;
-                gap: 28px;
+                gap: 0px;
                 align-items: center;
             }
 
