@@ -50,6 +50,8 @@ function updateForm(type) {
     }
 }
 
+var counter = 0;
+
 // Show form section with updated text and image
 function showForm(type) {
     selectedType = type;
@@ -58,6 +60,15 @@ function showForm(type) {
     updateForm(type);
     updateHero(type);
     resetForm();
+    debugger
+    if(counter > 0) {
+        setTimeout(() => {
+            inputName.focus();
+        }, 300);
+    } else if(counter == 0) {
+        counter++;
+    }
+
 
     btnCouple.setAttribute('aria-expanded', type === 'couple' ? 'true' : 'false');
     btnPhotographer.setAttribute('aria-expanded', type === 'photographer' ? 'true' : 'false');
