@@ -22,12 +22,8 @@ var emailData = {
     name: "",
     selectedType: ""
 };
-const coupleHeroImageSrc = "Couple.jpg";
-const photographerHeroImageSrc = "photographer.jpg";
 
-const coupleFormSubtitle =
-    "We know the search is overwhelming. That’s why we’re creating a better way: a curated platform where you can discover trustworthy, talented photographers who truly get your story. All in one place, built with love."
-const coupleFormSubtitlePart2 = "Tired of endless calls, fake ratings, and overpriced photographers? We’re building a simpler, smarter way to book photographers you can trust, someone who truly gets your story—without blowing your budget or losing your mind.";
+const coupleFormSubtitle = "Tired of endless calls, fake ratings, and overpriced photographers? We’re building a simpler, smarter way to book photographers you can trust, someone who truly gets your story—without blowing your budget or losing your mind.";
 const photographerFormSubtitle =
     "We’re building a platform where you don’t have to fight for fair pay, justify your rates, or chase couples who ghost. Just real bookings from couples who understand the value of your work—and treat you like a professional.";
 
@@ -35,13 +31,9 @@ let selectedType = null;
 
 function updateHero(type) {
     if (type === "couple") {
-        heroImage.src = coupleHeroImageSrc;
-        heroImage.alt = "Bride and groom sharing a joyful moment during wedding photography";
         btnCouple.classList.add("active");
         btnPhotographer.classList.remove("active");
     } else {
-        heroImage.src = photographerHeroImageSrc;
-        heroImage.alt = "Photographer taking candid wedding photos";
         btnPhotographer.classList.add("active");
         btnCouple.classList.remove("active");
     }
@@ -51,7 +43,7 @@ function updateForm(type) {
     updateTagLine(type);
     if (type === "couple") {
         formTitle.textContent = "Join the Waitlist";
-        formSubtitle.innerHTML = coupleFormSubtitle + "<br></br>" + coupleFormSubtitlePart2;
+        formSubtitle.innerHTML = coupleFormSubtitle;
     } else {
         formTitle.textContent = "Join the Waitlist";
         formSubtitle.textContent = photographerFormSubtitle;
@@ -66,9 +58,6 @@ function showForm(type) {
     updateForm(type);
     updateHero(type);
     resetForm();
-    setTimeout(() => {
-        inputName.focus();
-    }, 300);
 
     btnCouple.setAttribute('aria-expanded', type === 'couple' ? 'true' : 'false');
     btnPhotographer.setAttribute('aria-expanded', type === 'photographer' ? 'true' : 'false');
@@ -94,22 +83,19 @@ function validatePhone(phone) {
 function validate() {
     let valid = true;
     if (!inputName.value.trim()) {
-        errorName.textContent = "Please enter your name.";
         valid = false;
-    } else {
+    }
+    else {
         errorName.textContent = "";
     }
     if (!inputEmail.value.trim()) {
-        errorEmail.textContent = "Please enter your email.";
         valid = false;
     } else if (!validateEmail(inputEmail.value.trim())) {
-        errorEmail.textContent = "Please enter a valid email.";
         valid = false;
     } else {
         errorEmail.textContent = "";
     }
     if (!inputCity.value.trim()) {
-        errorCity.textContent = "Please select your city.";
         valid = false;
     } else {
         errorCity.textContent = "";
@@ -118,10 +104,8 @@ function validate() {
     if (inputNumber.value) {
         let phoneNumber = inputNumber.value.replace(/\D/g, '');
         if (phoneNumber.length < 10) {
-            errorNumber.textContent = "Mobile cannot be less than 10 digits."
             valid = false;
         } else if (!validatePhone(inputNumber.value.trim())) {
-            errorNumber.textContent = "Please enter a valid mobile."
             valid = false;
         }
     }
@@ -229,4 +213,57 @@ btnPhotographer.click();
 window.scrollTo({
     top: 0,
     behavior: 'smooth'  // Use 'auto' if you don't want smooth scroll
+});
+
+document.querySelectorAll('.no-spinner').forEach(input => {
+    input.addEventListener('keydown', e => {
+        // Allow: Backspace, Delete, Arrow keys
+        if (['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'].includes(e.key)) return;
+        // Block anything not a digit
+        if (!/^[0-9]$/.test(e.key)) e.preventDefault();
+    });
+});
+
+
+inputName.addEventListener('input', () => {
+    inputName.value = inputName.value.replace(/[^a-zA-Z\s]/g, '');
+});
+
+const btn = document.getElementById('nudgeBtn');
+const arrow = document.getElementById('scrollArrow');
+
+btnCouple.addEventListener('click', () => {
+    // Add nudge animation to body
+    document.body.classList.add('nudge-body');
+
+    // Show arrow
+    arrow.style.display = 'block';
+
+    // Remove arrow after 3.5 seconds
+    setTimeout(() => {
+        arrow.style.display = 'none';
+    }, 3500);
+
+    // Remove nudge class after animation ends so it can run again
+    setTimeout(() => {
+        document.body.classList.remove('nudge-body');
+    }, 900);
+});
+
+btnPhotographer.addEventListener('click', () => {
+    // Add nudge animation to body
+    document.body.classList.add('nudge-body');
+
+    // Show arrow
+    arrow.style.display = 'block';
+
+    // Remove arrow after 3.5 seconds
+    setTimeout(() => {
+        arrow.style.display = 'none';
+    }, 3500);
+
+    // Remove nudge class after animation ends so it can run again
+    setTimeout(() => {
+        document.body.classList.remove('nudge-body');
+    }, 900);
 });

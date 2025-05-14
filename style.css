@@ -143,7 +143,7 @@
 
         .hero-image img {
             width: 100%;
-            height: auto;
+            height: 450px;
             display: block;
             object-fit: cover;
             border-radius: 16px;
@@ -268,7 +268,7 @@
 
         input[type="text"],
         input[type="email"],
-        input[type="tel"],
+        input[type="number"],
         select {
             width: 100%;
             padding: 14px 18px;
@@ -288,12 +288,33 @@
 
         input[type="text"]:focus,
         input[type="email"]:focus,
-        input[type="tel"]:focus,
+        input[type="number"]:focus,
         select:focus {
             border-color: #CADABA;
             outline: none;
             background-color: #fff;
             box-shadow: none;
+        }
+
+        /* Chrome, Safari, Edge, Opera - hide arrows */
+        .no-spinner::-webkit-inner-spin-button,
+        .no-spinner::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox - hide arrows */
+        .no-spinner {
+            -moz-appearance: textfield;
+        }
+
+        /* Ensure no arrows on hover or focus */
+        .no-spinner:hover,
+        .no-spinner:focus {
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            appearance: none;
         }
 
         #city-input {
@@ -720,4 +741,69 @@
         .icon-whatsapp:hover {
             color: #fff;
         }
-        
+
+        @keyframes nudge {
+            0% {
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(25px);
+            }
+
+            50% {
+                transform: translateY(0);
+            }
+
+            75% {
+                transform: translateY(12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .nudge-body {
+            animation: nudge 0.8s ease;
+        }
+
+        /* Arrow styles */
+        .scroll-arrow {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            width: 24px;
+            height: 24px;
+            border-left: 3px solid #333;
+            border-bottom: 3px solid #333;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards 0.5s, bounce 1.5s infinite 1s;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) rotate(-45deg) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) rotate(-45deg) translateY(12px);
+            }
+
+            60% {
+                transform: translateX(-50%) rotate(-45deg) translateY(6px);
+            }
+        }

@@ -27,7 +27,7 @@
   <main class="container" role="main" aria-label="Homepage main content">
     <section class="hero" aria-label="Main hero section">
       <div class="hero-image" id="hero-image" aria-hidden="true">
-        <img src="Couple.jpg" alt="Bride and groom sharing a joyful moment during wedding photography" />
+        <img src="Couple.png" alt="Bride and groom sharing a joyful moment during wedding photography" />
       </div>
       <div class="hero-text">
         <h1 id="tagline-text">Work with couples who <span class="special-word">value</span> your craft.</h1>
@@ -42,6 +42,8 @@
         </div>
       </div>
     </section>
+
+    <div id="scrollArrow" class="scroll-arrow" style="display: none;"></div>
 
     <section id="form-section" aria-label="Waitlist signup form" aria-hidden="true" tabindex="0">
       <h2 id="form-title">Join the Waitlist</h2>
@@ -61,6 +63,12 @@
           <input type="email" id="email-input" name="email" autocomplete="email" placeholder="example@mail.com" required
             aria-required="true" />
           <span class="error-message" id="error-email" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="number-input">Mobile Number</label>
+          <input type="text" class="no-spinner" inputmode="numeric" pattern="[0-9]*" id="number-input" name="number"  placeholder="9876543210"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="10" minlength="10" required />
+          <span class="error-message" id="error-number" aria-live="polite"></span>
         </div>
         <div class="form-group">
           <label for="city-input">City</label>
@@ -179,12 +187,6 @@
           <small id="city-desc" style="color:#888; font-size:0.85rem; user-select:none;">Choose your city from
             the list.</small>
           <span class="error-message" id="error-city" aria-live="polite"></span>
-        </div>
-        <div class="form-group">
-          <label for="number-input">Number</label>
-          <input type="tel" id="number-input" name="number" autocomplete="tel" placeholder="9898989878"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="10" minlength="10" required />
-          <span class="error-message" id="error-number" aria-live="polite"></span>
         </div>
         <button type="submit" class="submit-btn" id="submit-btn" disabled>Join the Waitlist</button>
       </form>
