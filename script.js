@@ -16,6 +16,7 @@ const errorName = document.getElementById('error-name');
 const errorEmail = document.getElementById('error-email');
 const errorCity = document.getElementById('error-city');
 const errorNumber = document.getElementById('error-number');
+const brochure = document.getElementById("tagline-brochure");
 
 var emailData = {
     to: "",
@@ -23,9 +24,11 @@ var emailData = {
     selectedType: ""
 };
 
-const coupleFormSubtitle = "Tired of endless calls, fake ratings, and overpriced photographers? We’re building a simpler, smarter way to book photographers you can trust, someone who truly gets your story—without blowing your budget or losing your mind.";
-const photographerFormSubtitle =
-    "We’re building a platform where you don’t have to fight for fair pay, justify your rates, or chase couples who ghost. Just real bookings from couples who understand the value of your work—and treat you like a professional.";
+const coupleFormSubtitle = "Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?";
+const coupleFormSubtitlePart2 = "We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.";
+
+const photographerFormSubtitle = "Tired of clients not paying after delivery or rejecting your rates?"
+const photographerFormSubtitlepart2 = "We’re building a platform where you don’t have to justify your pricing or chase overdue payments. Just real bookings from respectful couples who value your work and pay the full amount-on time.";
 
 let selectedType = null;
 
@@ -43,10 +46,13 @@ function updateForm(type) {
     updateTagLine(type);
     if (type === "couple") {
         formTitle.textContent = "Join the Waitlist";
-        formSubtitle.innerHTML = coupleFormSubtitle;
+        formSubtitle.innerHTML = coupleFormSubtitle + "<br><br>" + coupleFormSubtitlePart2;
+        brochure.innerHTML = "<p id='tagline-brochure'>Download our <a href='BrochureforCouples.pdf' target='_blank'>Brochure</a>.</p>"
+
     } else {
         formTitle.textContent = "Join the Waitlist";
-        formSubtitle.textContent = photographerFormSubtitle;
+        formSubtitle.innerHTML = photographerFormSubtitle + "<br><br>" + photographerFormSubtitlepart2;
+        brochure.innerHTML = "<p id='tagline-brochure'>Download our <a href='BrochureforPhotographers.pdf' target='_blank'>Brochure</a>.</p>";
     }
 }
 
@@ -66,9 +72,9 @@ function showForm(type) {
 
 function updateTagLine(type) {
     if (type === "couple") {
-        tagLine.innerHTML = "<h1 id='tagline-text'>Find your <span class='special-word'>perfect</span> wedding photographer without any stress</h1>";
+        tagLine.innerHTML = "<h1 id='tagline-text'>Find your <span class='special-word'>perfect</span> <br> wedding photographer <br> quickly and easily.</h1>";
     } else {
-        tagLine.innerHTML = "<h1 id='tagline-text'>Get discovered, booked and <br> <span class='special-word';>fully paid</span> <br> by couples who truly value your work</h1>";
+        tagLine.innerHTML = "<h1 id='tagline-text'>Get discovered, <br /> booked and  <span class='special-word'>full paid</span> <br> by couples who truly <br> value your work</h1>";
     }
 }
 
