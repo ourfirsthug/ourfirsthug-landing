@@ -60,16 +60,6 @@ function showForm(type) {
     updateForm(type);
     updateHero(type);
     resetForm();
-    debugger
-    if(counter > 0) {
-        setTimeout(() => {
-            inputName.focus();
-        }, 300);
-    } else if(counter == 0) {
-        counter++;
-    }
-
-
     btnCouple.setAttribute('aria-expanded', type === 'couple' ? 'true' : 'false');
     btnPhotographer.setAttribute('aria-expanded', type === 'photographer' ? 'true' : 'false');
 }
