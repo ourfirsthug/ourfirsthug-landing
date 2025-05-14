@@ -68,7 +68,7 @@ function updateTagLine(type) {
     if (type === "couple") {
         tagLine.innerHTML = "<h1 id='tagline-text'>Find your <span class='special-word'>perfect</span> wedding photographer without any stress</h1>";
     } else {
-        tagLine.innerHTML = "<h1 id='tagline-text'>Work with couples who <span class='special-word'>value</span> your craft.</h1>"
+        tagLine.innerHTML = "<h1 id='tagline-text'>Get discovered, booked and <br> <span class='special-word';>fully paid</span> <br> by couples who truly value your work</h1>";
     }
 }
 
