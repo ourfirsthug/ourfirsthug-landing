@@ -58,7 +58,7 @@
         .login-btn {
             background: none;
             border: none;
-            color: #FF7043;
+            color: #0D1B2A;
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
@@ -70,7 +70,7 @@
 
         .login-btn:hover,
         .login-btn:focus {
-            color: #0D1B2A;
+            color: #FF7043;
             outline: none;
         }
 
@@ -123,7 +123,6 @@
             line-height: 1.5;
             color: #1a2a41;
             user-select: text;
-            margin-bottom: 36px;
         }
 
         .hero-image {

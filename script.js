@@ -74,7 +74,7 @@ function updateTagLine(type) {
     if (type === "couple") {
         tagLine.innerHTML = "<h1 id='tagline-text'>Find your <span class='special-word'>perfect</span> <br> wedding photographer <br> quickly and easily.</h1>";
     } else {
-        tagLine.innerHTML = "<h1 id='tagline-text'>Get discovered, <br /> booked and  <span class='special-word'>full paid</span> <br> by couples who truly <br> value your work</h1>";
+        tagLine.innerHTML = "<h1 id='tagline-text'>Get discovered, <br /> booked and  <span class='special-word'>fully paid</span> <br> by couples who truly <br> value your work</h1>";
     }
 }
 
@@ -108,12 +108,25 @@ function validate() {
         errorCity.textContent = "";
     }
 
-    if (inputNumber.value) {
-        let phoneNumber = inputNumber.value.replace(/\D/g, '');
-        if (phoneNumber.length < 10) {
-            valid = false;
-        } else if (!validatePhone(inputNumber.value.trim())) {
-            valid = false;
+    if (selectedType === "photographer") {
+        if (!inputNumber.value.trim()) {
+            valid = false
+        } else if (inputNumber.value) {
+            let phoneNumber = inputNumber.value.replace(/\D/g, '');
+            if (phoneNumber.length < 10) {
+                valid = false;
+            } else if (!validatePhone(inputNumber.value.trim())) {
+                valid = false;
+            }
+        }
+    } else {
+        if (inputNumber.value) {
+            let phoneNumber = inputNumber.value.replace(/\D/g, '');
+            if (phoneNumber.length < 10) {
+                valid = false;
+            } else if (!validatePhone(inputNumber.value.trim())) {
+                valid = false;
+            }
         }
     }
     submitBtn.disabled = !valid;
