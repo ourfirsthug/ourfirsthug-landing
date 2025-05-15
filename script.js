@@ -17,6 +17,7 @@ const errorEmail = document.getElementById('error-email');
 const errorCity = document.getElementById('error-city');
 const errorNumber = document.getElementById('error-number');
 const brochure = document.getElementById("tagline-brochure");
+const mobileNumber = document.getElementById("mobile-number");
 
 var emailData = {
     to: "",
@@ -48,11 +49,12 @@ function updateForm(type) {
         formTitle.textContent = "Join the Waitlist";
         formSubtitle.innerHTML = coupleFormSubtitle + "<br><br>" + coupleFormSubtitlePart2;
         brochure.innerHTML = "<p id='tagline-brochure'>Download our <a href='BrochureforCouples.pdf' target='_blank'>Brochure</a>.</p>"
-
+        mobileNumber.innerHTML = "<label for='number-input' id='mobile-number'>Mobile Number</label>";
     } else {
         formTitle.textContent = "Join the Waitlist";
         formSubtitle.innerHTML = photographerFormSubtitle + "<br><br>" + photographerFormSubtitlepart2;
         brochure.innerHTML = "<p id='tagline-brochure'>Download our <a href='BrochureforPhotographers.pdf' target='_blank'>Brochure</a>.</p>";
+        mobileNumber.innerHTML = "<label for='number-input' id='mobile-number'>Mobile Number*</label>";
     }
 }
 
