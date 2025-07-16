@@ -237,21 +237,25 @@
     @media (max-width: 600px) {
       h1,
       .hero-heading {
-        font-size: 32px;
+        font-size: 42px;
+        font-weight: 700;
       }
-
       h2 {
         font-size: 24px;
       }
-
       h3 {
         font-size: 18px;
       }
-
       .btn,
       .main-btn {
         font-size: 14px;
         padding: 10px 18px;
+      }
+      .mobile-hero-para {
+        margin-bottom: 1.5em !important;
+        line-height: 1.7;
+        font-size: 15px !important;
+        letter-spacing: 0.01em;
       }
     }
 
@@ -265,10 +269,12 @@
     h4 {
       font-family: 'Cormorant Garamond', serif;
     }
+    #btn-couple, #btn-photographer {
+        font-size: 15px !important;
+        padding: 8px 18px !important;
+      }
   </style>
-</head>
-
-<body class="bg-white text-[#0D1B2A]">
+      <body class="bg-white text-[#0D1B2A]">
   <nav class="sticky top-0 z-50 bg-white shadow-sm py-4">
     <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
       <!-- Logo -->
@@ -287,7 +293,7 @@
   </nav>
 
   <!-- Hero Section with Toggle -->
-  <section class="py-4 sm:py-8 px-4 sm:px-6 max-w-7xl mx-auto text-sm sm:text-base">
+  <section class="py-8 sm:py-8 px-4 sm:px-6 max-w-7xl mx-auto text-sm sm:text-base">
     <div class="flex flex-row flex-nowrap justify-center gap-2 mb-10 w-full px-1 sm:px-0">
       <button onclick="showHero('couple')" id="btn-couple"
         class="peer px-2 py-1 sm:px-4 sm:py-2 rounded-full border text-[#0D1B2A] font-medium hover:bg-gray-100 transition flex flex-row items-center gap-1 sm:gap-2 hover:scale-105 hover:shadow-sm duration-200 whitespace-nowrap text-xs sm:text-base min-w-0">
@@ -309,8 +315,12 @@
           wedding photographer<br>
           quickly and easily.
         </h1>
-        <p class="text-sm sm:text-lg mb-1">Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?</p>
-        <p class="text-sm sm:text-lg mb-1">We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.</p>
+        <p class="text-sm sm:text-lg mb-3 mobile-hero-para">Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?</p>
+        <p class="text-sm sm:text-lg mb-3 mobile-hero-para">We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.</p>
+        <div class='flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start items-center mb-2'>
+          <a id="download-btn" href="/brochures/couple.pdf" download class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
+          <button id="waitlist-btn" type="button" tabindex="0" class="px-4 sm:px-6 py-2 sm:py-3 bg-white border border-[#FF7043] text-[#FF7043] rounded-lg font-semibold hover:bg-orange-50 transition text-xs sm:text-base flex items-center gap-2">Join the Waitlist</button>
+        </div>
       </div>
       <div id="hero-image">
         <img
@@ -396,10 +406,10 @@
           Behind this is Divyansh Nigam, who spent 2+ years working alongside wedding photographers and saw the pain points up close. Alongside him is Aman Pandey, who has a deep passion for clean, user-first experiences and a strong background in building reliable digital products that scale.
         </p>
         <div class="my-4">
-          <strong class="text-[#FF7043] block text-base sm:text-lg">Together, we’re on a mission to bring clarity, elegance and ease to wedding memories.</strong>
+          <strong>Together, we’re on a mission to bring clarity, elegance and ease to wedding memories.</strong>
         </div>
         <p>
-          <strong>Because your first hug as a married couple deserves to be captured by someone who truly sees it.</strong>
+          <strong class="text-[#FF7043] block text-base sm:text-lg">Because your first hug as a married couple deserves to be captured by someone who truly sees it.</strong>
         </p>
       </div>
     </div>
@@ -407,24 +417,20 @@
   <section class="bg-white py-6 sm:py-12">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-lg sm:text-2xl font-semibold text-[#FF7043] mb-3 sm:mb-6">Contact Us</h2>
-      <div class="flex justify-center gap-4 sm:gap-8 text-gray-700 text-base sm:text-lg">
-
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-gray-700 text-base sm:text-lg">
         <a href="https://wa.me/919999999999" target="_blank"
-          class="flex items-center gap-1 sm:gap-2 hover:text-green-600 transition">
-          <i class="fab fa-whatsapp text-lg sm:text-2xl"></i>
-          WhatsApp
+          class="flex items-center gap-2 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
+          <i class="fab fa-whatsapp text-2xl text-[#25D366]"></i>
+          <span class="font-semibold">WhatsApp</span>
         </a>
-
-        <a href="mailto:hello@ourfirsthug.com" class="flex items-center gap-1 sm:gap-2 hover:text-blue-600 transition">
-          <i class="fas fa-envelope text-lg sm:text-2xl"></i>
-          Email
+        <a href="mailto:hello@ourfirsthug.com" class="flex items-center gap-2 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
+          <i class="fas fa-envelope text-2xl text-[#FF7043]"></i>
+          <span class="font-semibold">Email</span>
         </a>
-
-        <a href="tel:+919999999999" class="flex items-center gap-1 sm:gap-2 hover:text-indigo-600 transition">
-          <i class="fas fa-phone text-lg sm:text-2xl"></i>
-          Call
+        <a href="tel:+919999999999" class="flex items-center gap-2 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
+          <i class="fas fa-phone text-2xl text-[#0D1B2A]"></i>
+          <span class="font-semibold">Call</span>
         </a>
-
       </div>
     </div>
   </section>
@@ -491,8 +497,8 @@
             wedding photographer<br>
             quickly and easily.
           </h1>
-          <p class="text-sm sm:text-lg mb-1">Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?</p>
-          <p class="text-sm sm:text-lg mb-3">We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.</p>
+          <p class="text-sm sm:text-lg mb-3 mobile-hero-para">Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?</p>
+          <p class="text-sm sm:text-lg mb-3 mobile-hero-para">We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.</p>
           <div class='flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start items-center mb-2'>
             <a id="download-btn" href="/brochures/couple.pdf" download class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
             <button id="waitlist-btn" type="button" tabindex="0" class="px-4 sm:px-6 py-2 sm:py-3 bg-white border border-[#FF7043] text-[#FF7043] rounded-lg font-semibold hover:bg-orange-50 transition text-xs sm:text-base flex items-center gap-2">Join the Waitlist</button>
@@ -509,7 +515,7 @@
             by couples who truly<br>
             value your work
           </h1>
-          <p class="text-sm sm:text-lg mb-1">Tired of clients not paying after delivery or rejecting your rates?</p>
+          <p class="text-sm sm:text-lg mb-3">Tired of clients not paying after delivery or rejecting your rates?</p>
           <p class="text-sm sm:text-lg mb-3">We’re building a platform where you don’t have to justify your pricing or chase overdue payments. Just real bookings from respectful couples who value your work and pay the full amount-on time.</p>
           <div class='flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start items-center mb-2'>
             <a id="download-btn" href="/brochures/photographer.pdf" download class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
