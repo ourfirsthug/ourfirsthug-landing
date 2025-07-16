@@ -235,6 +235,40 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        font-size: 18px;
+      }
+      section {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+      h1, .hero-heading {
+        font-size: 46px;
+      }
+      h2 {
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+      h3 {
+        font-size: 20px;
+      }
+      .mobile-hero-para {
+        font-size: 17px !important;
+      }
+      /* Responsive Contact Us buttons for mobile */
+      .contact-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 8px 10px !important;
+        font-size: 15px !important;
+        margin-bottom: 0 !important;
+      }
+      .contact-btn i {
+        font-size: 20px !important;
+      }
+      .contact-btn {
+        margin-right: 4px !important;
       h1,
       .hero-heading {
         font-size: 42px;
@@ -419,15 +453,15 @@
       <h2 class="text-lg sm:text-2xl font-semibold text-[#FF7043] mb-3 sm:mb-6">Contact Us</h2>
       <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-gray-700 text-base sm:text-lg">
         <a href="https://wa.me/919999999999" target="_blank"
-          class="flex items-center gap-2 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
+          class="contact-btn flex items-center gap-3 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
           <i class="fab fa-whatsapp text-2xl text-[#25D366]"></i>
           <span class="font-semibold">WhatsApp</span>
         </a>
-        <a href="mailto:hello@ourfirsthug.com" class="flex items-center gap-2 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
+        <a href="mailto:hello@ourfirsthug.com" class="contact-btn flex items-center gap-3 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
           <i class="fas fa-envelope text-2xl text-[#FF7043]"></i>
           <span class="font-semibold">Email</span>
         </a>
-        <a href="tel:+919999999999" class="flex items-center gap-2 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
+        <a href="tel:+919999999999" class="contact-btn flex items-center gap-3 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
           <i class="fas fa-phone text-2xl text-[#0D1B2A]"></i>
           <span class="font-semibold">Call</span>
         </a>
