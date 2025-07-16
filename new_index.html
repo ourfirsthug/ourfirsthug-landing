@@ -12,6 +12,249 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    :root {
+      --burnt-sienna: #FF7043;
+      --rosy-red: #F15C6D;
+      --soft-sage: #CADABA;
+      --white: #FFFFFF;
+      --charcoal-navy: #0D1B2A;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--white);
+      color: var(--charcoal-navy);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    h1,
+    .hero-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 500;
+      color: var(--charcoal-navy);
+      letter-spacing: 0.01em;
+      margin-bottom: 0.5em;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 500;
+      color: var(--charcoal-navy);
+      margin-bottom: 0.5em;
+    }
+
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--charcoal-navy);
+      margin-bottom: 0.5em;
+    }
+
+    h4,
+    .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--charcoal-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .body-large {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--charcoal-navy);
+    }
+
+    .body-base {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--charcoal-navy);
+    }
+
+    .body-small {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--charcoal-navy);
+    }
+
+    a,
+    .link {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--burnt-sienna);
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    a:hover,
+    .link:hover {
+      color: var(--rosy-red);
+    }
+
+    .btn,
+    button,
+    .main-btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: 12px 28px;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+
+    .btn-primary,
+    .main-btn,
+    .bg-primary {
+      background: var(--burnt-sienna);
+      color: var(--white);
+    }
+
+    .btn-primary:hover,
+    .main-btn:hover {
+      background: var(--rosy-red);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--rosy-red);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: var(--burnt-sienna);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--burnt-sienna);
+      border: 2px solid var(--burnt-sienna);
+    }
+
+    .btn-outline:hover {
+      background: var(--soft-sage);
+      color: var(--burnt-sienna);
+    }
+
+    .highlight {
+      color: var(--burnt-sienna);
+    }
+
+    .section-bg {
+      background: var(--soft-sage);
+    }
+
+    .footer,
+    footer {
+      background: var(--white);
+      color: var(--charcoal-navy);
+    }
+
+    .footer a {
+      color: var(--burnt-sienna);
+    }
+
+    .footer a:hover {
+      color: var(--rosy-red);
+    }
+
+    .tag,
+    .badge {
+      background: var(--soft-sage);
+      color: var(--charcoal-navy);
+      border-radius: 8px;
+      padding: 2px 10px;
+      font-size: 14px;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    /* Utility classes for backgrounds */
+    .bg-primary {
+      background: var(--burnt-sienna) !important;
+      color: var(--white) !important;
+    }
+
+    .bg-secondary {
+      background: var(--rosy-red) !important;
+      color: var(--white) !important;
+    }
+
+    .bg-soft {
+      background: var(--soft-sage) !important;
+      color: var(--charcoal-navy) !important;
+    }
+
+    .text-primary {
+      color: var(--burnt-sienna) !important;
+    }
+
+    .text-secondary {
+      color: var(--rosy-red) !important;
+    }
+
+    .text-soft {
+      color: var(--soft-sage) !important;
+    }
+
+    .text-dark {
+      color: var(--charcoal-navy) !important;
+    }
+
+    .text-white {
+      color: var(--white) !important;
+    }
+
+    /* Responsive hero heading */
+    @media (max-width: 900px) {
+      h1,
+      .hero-heading {
+        font-size: 40px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      h3 {
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1,
+      .hero-heading {
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      .btn,
+      .main-btn {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
@@ -26,100 +269,138 @@
 </head>
 
 <body class="bg-white text-[#0D1B2A]">
-<nav class="sticky top-0 z-50 bg-white shadow-sm py-4">
-  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
-    <!-- Logo -->
-    <div class="flex items-center h-10 sm:h-12 pl-1 sm:pl-0" style="min-width:90px;">
-      <img src="logo.png" alt="ourfirsthug logo" class="w-[200px] h-[120px] object-contain -mt-10 drop-shadow-md rounded-xl" style="width:200px;height:100px;margin-top:0px;object-fit:contain;margin-left:-38px;" />our
-    </div>
+  <nav class="sticky top-0 z-50 bg-white shadow-sm py-4">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center h-10 sm:h-12 pl-1 sm:pl-0" style="min-width:90px;">
+        <img src="logo.png" alt="ourfirsthug logo"
+          class="w-[200px] h-[120px] object-contain -mt-10 drop-shadow-md rounded-xl"
+          style="width:200px;height:100px;margin-top:0px;object-fit:contain;margin-left:-38px;" />
+      </div>
 
-    <!-- Blog Link -->
-    <a href="https://indianweddingblogs.com" target="_blank"
-       class="text-sm text-[#0D1B2A] hover:text-[#FF7043] hover:underline underline-offset-4 transition duration-200 font-semibold">
-      Visit Our Blog
-    </a>
-  </div>
-</nav>
+      <!-- Blog Link -->
+      <a href="https://indianweddingblogs.com" target="_blank"
+        class="text-sm text-[#0D1B2A] hover:text-[#FF7043] hover:underline underline-offset-4 transition duration-200 font-semibold">
+        Visit Our Blog
+      </a>
+    </div>
+  </nav>
 
   <!-- Hero Section with Toggle -->
-  <section class="py-4 sm:py-8 px-4 sm:px-6 max-w-7xl mx-auto">
+  <section class="py-4 sm:py-8 px-4 sm:px-6 max-w-7xl mx-auto text-sm sm:text-base">
     <div class="flex flex-row flex-nowrap justify-center gap-2 mb-10 w-full px-1 sm:px-0">
       <button onclick="showHero('couple')" id="btn-couple"
         class="peer px-2 py-1 sm:px-4 sm:py-2 rounded-full border text-[#0D1B2A] font-medium hover:bg-gray-100 transition flex flex-row items-center gap-1 sm:gap-2 hover:scale-105 hover:shadow-sm duration-200 whitespace-nowrap text-xs sm:text-base min-w-0">
         I'm a Couple
-        <img src="couple_logo.jpeg" class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110 ml-1 sm:ml-2" alt="Couple Icon">
+        <img src="couple_logo.jpeg" class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110 ml-1 sm:ml-2"
+          alt="Couple Icon">
       </button>
       <button onclick="showHero('photographer')" id="btn-photographer"
         class="peer px-2 py-1 sm:px-4 sm:py-2 rounded-full border text-[#0D1B2A] font-medium hover:bg-gray-100 transition flex flex-row items-center gap-1 sm:gap-2 hover:scale-105 hover:shadow-sm duration-200 whitespace-nowrap text-xs sm:text-base min-w-0">
         I'm a Photographer
-        <img src="photographer.jpg" class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110 ml-1 sm:ml-2" alt="Photographer Icon">
+        <img src="photographer.jpg" class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110 ml-1 sm:ml-2"
+          alt="Photographer Icon">
       </button>
     </div>
     <div class="grid md:grid-cols-2 gap-6 sm:gap-10 items-center">
+      <div id="hero-content" class="text-center md:text-left">
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-medium mb-2 sm:mb-4 leading-tight">
+          Find your <span class='text-[#FF7043]'>perfect</span><br>
+          wedding photographer<br>
+          quickly and easily.
+        </h1>
+        <p class="text-sm sm:text-lg mb-1">Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?</p>
+        <p class="text-sm sm:text-lg mb-1">We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.</p>
+      </div>
       <div id="hero-image">
         <img
           src="https://ourfirsthug-blog.s3.ap-south-1.amazonaws.com/blogcontent/c0d6fb1c-d4fe-46ea-9284-d6de5a9da418_final-wedding-prep-checklist-india.jpg.jpg"
           alt="Couple Experience" class="rounded-2xl w-full max-h-[160px] sm:max-h-[300px] object-cover">
       </div>
-
-      <div id="hero-content" class="text-center md:text-left">
-        <h1 class="text-2xl sm:text-4xl md:text-5xl font-medium mb-2 sm:mb-4">Preserve Your Love Story</h1>
-        <p class="text-sm sm:text-lg mb-1">Find India's top 3% handpicked wedding photographers</p>
-        <p class="text-sm sm:text-lg mb-1">See galleries, reviews, and packages in minutes</p>
-        <p class="text-sm sm:text-lg mb-1">Book effortlessly with full trust and clarity</p>
-        <a id="download-btn" href="/brochures/couple.pdf" download
-          class="inline-block mt-2 sm:mt-4 px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download
-          Brochure</a>
-      </div>
     </div>
 
     <!-- Waitlist Form -->
-    <div class="mt-8 sm:mt-16 max-w-xl mx-auto">
-      <h2 class="text-xl sm:text-3xl font-semibold mb-4 sm:mb-6 text-center">Join the Waitlist</h2>
-      <form id="waitlistForm" class="space-y-3 sm:space-y-4">
-        <div id="nameField" class="hidden">
-          <label class="block mb-1 font-medium text-xs sm:text-base">Name</label>
-          <input type="text" id="name" class="w-full border border-gray-300 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base"
-            placeholder="Your name">
-        </div>
-        <div>
-          <label class="block mb-1 font-medium text-xs sm:text-base">Email</label>
-          <input type="email" id="email" class="w-full border border-gray-300 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base"
-            placeholder="your@email.com">
-        </div>
-        <div>
-          <label class="block mb-1 font-medium text-xs sm:text-base" id="dropdownLabel">City</label>
-          <select id="dropdown" class="w-full border border-gray-300 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base">
-            <option value="">Select an option</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Bangalore">Bangalore</option>
-            <option value="Goa">Goa</option>
-          </select>
-        </div>
-        <button type="submit" id="submitBtn" disabled
-          class="w-full bg-gray-400 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition text-xs sm:text-base">Submit</button>
-      </form>
+    <div class="mt-12 sm:mt-20 max-w-xl mx-auto px-4 sm:px-0">
+      <div class="bg-gray-50 rounded-2xl shadow-sm p-5 sm:p-8">
+        <h2 class="text-lg sm:text-3xl font-semibold mb-5 sm:mb-6 text-center">Join the Waitlist</h2>
+        <form id="waitlistForm" class="space-y-5 sm:space-y-6">
+          <div id="nameField" class="hidden">
+            <label class="block mb-1 font-medium text-sm sm:text-base">Name</label>
+            <input type="text" id="name"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base"
+              placeholder="Your name">
+          </div>
+          <div>
+            <label class="block mb-1 font-medium text-sm sm:text-base">Email</label>
+            <input type="email" id="email"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base"
+              placeholder="your@email.com">
+          </div>
+          <div>
+            <label class="block mb-1 font-medium text-sm sm:text-base" id="dropdownLabel">City</label>
+            <select id="dropdown"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base">
+              <option value="">Select an option</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Goa">Goa</option>
+            </select>
+          </div>
+          <button type="submit" id="submitBtn" disabled
+            class="w-full bg-gray-400 text-white px-6 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold transition text-sm sm:text-base">Submit</button>
+        </form>
+      </div>
     </div>
 
-    <!-- Meet the Team -->
-    <div class="mt-12 sm:mt-24 max-w-4xl mx-auto">
-      <h2 class="text-xl sm:text-3xl font-semibold mb-4 sm:mb-8 text-center">Meet the Team</h2>
-      <div class="grid md:grid-cols-2 gap-4 sm:gap-8 text-center">
-        <div>
-          <img src="https://randomuser.me/api/portraits/men/32.jpg"
-            class="w-20 h-20 sm:w-32 sm:h-32 mx-auto rounded-full object-cover mb-2 sm:mb-4" alt="CEO">
-          <h3 class="text-base sm:text-xl font-semibold mb-1 sm:mb-2">Amit Verma</h3>
-          <p class="text-xs sm:text-sm text-gray-600">Co-founder & CEO. Believes every wedding story deserves to be immortalized
-            with soul, art and purpose. Leads the brand vision and storytelling.</p>
+    <!-- About Us -->
+    <div class="mt-16 sm:mt-28 max-w-3xl mx-auto px-4 sm:px-0 bg-[#faf7f5] border-l-4 border-[#FF7043] rounded-xl shadow-sm">
+      <h2 class="text-lg sm:text-3xl font-semibold mb-5 sm:mb-8 text-center pt-6">About Us</h2>
+      <div class="flex flex-row justify-center items-center gap-6 sm:gap-12 mb-4">
+        <!-- Founder 1 -->
+        <div class="flex flex-col items-center">
+          <img src="CEO.jpg" class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-1 shadow" alt="Amit Verma">
+          <h3 class="text-base sm:text-lg font-semibold mb-0.5">Divyansh Nigam</h3>
+          <span class="text-xs sm:text-sm text-gray-500 mb-1">Co-founder & CEO</span>
+          <div class="flex gap-2 mb-1">
+            <a href="https://linkedin.com/in/amitverma" target="_blank" class="text-gray-500 hover:text-blue-700"><i
+                class="fab fa-linkedin text-xl"></i></a>
+            <a href="https://instagram.com/amitverma" target="_blank" class="text-gray-500 hover:text-pink-500"><i
+                class="fab fa-instagram text-xl"></i></a>
+          </div>
         </div>
-        <div>
-          <img src="https://randomuser.me/api/portraits/men/44.jpg"
-            class="w-20 h-20 sm:w-32 sm:h-32 mx-auto rounded-full object-cover mb-2 sm:mb-4" alt="CTO">
-          <h3 class="text-base sm:text-xl font-semibold mb-1 sm:mb-2">Rohit Khanna</h3>
-          <p class="text-xs sm:text-sm text-gray-600">Co-founder & CTO. Tech architect behind our effortless booking experience.
-            Crafts a platform that feels human, fast and trustworthy.</p>
+        <!-- Founder 2 -->
+        <div class="flex flex-col items-center">
+          <img src="CTO.jpeg" class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-1 shadow" alt="Rohit Khanna">
+          <h3 class="text-base sm:text-lg font-semibold mb-0.5">Aman Pandey</h3>
+          <span class="text-xs sm:text-sm text-gray-500 mb-1">Co-founder & CTO</span>
+          <div class="flex gap-2 mb-1">
+            <a href="https://linkedin.com/in/rohitkhanna" target="_blank" class="text-gray-500 hover:text-blue-700"><i
+                class="fab fa-linkedin text-xl"></i></a>
+            <a href="https://instagram.com/rohitkhanna" target="_blank" class="text-gray-500 hover:text-pink-500"><i
+                class="fab fa-instagram text-xl"></i></a>
+          </div>
         </div>
+      </div>
+      <div class="bg-white/90 rounded-xl p-4 sm:p-6 text-left text-gray-700 text-base sm:text-lg shadow-sm mb-6">
+        <p>
+          Weddings are once-in-a-lifetime — and your memories deserve to be captured beautifully, effortlessly, and honestly. Yet, finding the right photographer often feels frustrating: inflated prices, fake reviews, and portfolios that don’t match expectations. On the other side, talented photographers struggle to find genuine clients who value their craft.
+        </p>
+        <div class="my-4">
+          <strong class="text-[#FF7043] block text-base sm:text-lg">ourfirsthug was born from this gap.</strong>
+        </div>
+        <p>
+          We’re building a curated platform where love meets trust — a seamless space for couples to discover professional photographers who fit their style and budget, and for photographers to showcase their artistry, build packages, and secure meaningful work.
+        </p>
+        <p>
+          Behind this is Divyansh Nigam, who spent 2+ years working alongside wedding photographers and saw the pain points up close. Alongside him is Aman Pandey, who has a deep passion for clean, user-first experiences and a strong background in building reliable digital products that scale.
+        </p>
+        <div class="my-4">
+          <strong class="text-[#FF7043] block text-base sm:text-lg">Together, we’re on a mission to bring clarity, elegance and ease to wedding memories.</strong>
+        </div>
+        <p>
+          <strong>Because your first hug as a married couple deserves to be captured by someone who truly sees it.</strong>
+        </p>
       </div>
     </div>
   </section>
@@ -185,7 +466,7 @@
   <script>
     
     let currentType = 'photographer';
-    highlightSelected(currentType);
+    showHero(currentType);
     function highlightSelected(type) {
         document.getElementById('btn-couple').classList.remove('border-[#FF7043]', 'bg-orange-50');
         document.getElementById('btn-photographer').classList.remove('border-[#FF7043]', 'bg-orange-50');
@@ -205,22 +486,35 @@
       if (type === 'couple') {
         image.innerHTML = '<img src="https://ourfirsthug-blog.s3.ap-south-1.amazonaws.com/blogcontent/c0d6fb1c-d4fe-46ea-9284-d6de5a9da418_final-wedding-prep-checklist-india.jpg.jpg" alt="Couple Experience" class="rounded-2xl w-full max-h-[160px] sm:max-h-[300px] object-cover">';
         content.innerHTML = `
-          <h1 class="text-2xl sm:text-4xl md:text-5xl font-medium mb-2 sm:mb-4">Preserve Your Love Story</h1>
-          <p class="text-sm sm:text-lg mb-1">Find India's top 3% handpicked wedding photographers</p>
-          <p class="text-sm sm:text-lg mb-1">See galleries, reviews, and packages in minutes</p>
-          <p class="text-sm sm:text-lg mb-1">Book effortlessly with full trust and clarity</p>
-          <a id="download-btn" href="/brochures/couple.pdf" download class="inline-block mt-2 sm:mt-4 px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
+          <h1 class="text-2xl sm:text-4xl md:text-5xl font-medium mb-2 sm:mb-4 leading-tight">
+            Find your <span class='text-[#FF7043]'>perfect</span><br>
+            wedding photographer<br>
+            quickly and easily.
+          </h1>
+          <p class="text-sm sm:text-lg mb-1">Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?</p>
+          <p class="text-sm sm:text-lg mb-3">We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.</p>
+          <div class='flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start items-center mb-2'>
+            <a id="download-btn" href="/brochures/couple.pdf" download class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
+            <button id="waitlist-btn" type="button" tabindex="0" class="px-4 sm:px-6 py-2 sm:py-3 bg-white border border-[#FF7043] text-[#FF7043] rounded-lg font-semibold hover:bg-orange-50 transition text-xs sm:text-base flex items-center gap-2">Join the Waitlist</button>
+          </div>
         `;
         nameField.classList.add("hidden");
         dropdownLabel.textContent = "City";
       } else {
         image.innerHTML = '<img src="https://ourfirsthug-blog.s3.ap-south-1.amazonaws.com/blogcontent/271650b9-09b6-4c4d-bcb6-81f2a06e740d_wedding-checklist-india-outfits-vendors.jpg.jpg" alt="Photographer Experience" class="rounded-2xl w-full max-h-[160px] sm:max-h-[300px] object-cover">';
         content.innerHTML = `
-          <h1 class="text-2xl sm:text-4xl md:text-5xl font-medium mb-2 sm:mb-4">Grow With the Best Clients</h1>
-          <p class="text-sm sm:text-lg mb-1">Join a curated network of premium wedding photographers</p>
-          <p class="text-sm sm:text-lg mb-1">Get high-quality leads & increase bookings</p>
-          <p class="text-sm sm:text-lg mb-1">Tools to manage inquiries, showcase your brand</p>
-          <a id="download-btn" href="/brochures/photographer.pdf" download class="inline-block mt-2 sm:mt-4 px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
+          <h1 class="text-2xl sm:text-4xl md:text-5xl font-medium mb-2 sm:mb-4 leading-tight">
+            Get discovered,<br>
+            booked and <span class='text-[#FF7043]'>fully paid</span><br>
+            by couples who truly<br>
+            value your work
+          </h1>
+          <p class="text-sm sm:text-lg mb-1">Tired of clients not paying after delivery or rejecting your rates?</p>
+          <p class="text-sm sm:text-lg mb-3">We’re building a platform where you don’t have to justify your pricing or chase overdue payments. Just real bookings from respectful couples who value your work and pay the full amount-on time.</p>
+          <div class='flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start items-center mb-2'>
+            <a id="download-btn" href="/brochures/photographer.pdf" download class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
+            <button id="waitlist-btn" type="button" class="px-4 sm:px-6 py-2 sm:py-3 bg-white border border-[#FF7043] text-[#FF7043] rounded-lg font-semibold hover:bg-orange-50 transition text-xs sm:text-base flex items-center gap-2">Join the Waitlist</button>
+          </div>
         `;
         nameField.classList.remove("hidden");
         dropdownLabel.textContent = "Location";
@@ -260,10 +554,55 @@
       validateForm();
     });
 
+    // Waitlist button bounce and scroll arrow logic
+    function bounceScreenAndShowArrow(e) {
+      if (e) e.preventDefault();
+      // Subtle bounce animation on body
+      document.body.animate([
+        { transform: 'translateY(0px)' },
+        { transform: 'translateY(-20px)' },
+        { transform: 'translateY(0px)' }
+      ], {
+        duration: 500,
+        easing: 'cubic-bezier(.68,-0.55,.27,1.55)'
+      });
+      // Show arrow at bottom
+      const arrow = document.getElementById('scroll-arrow');
+      arrow.style.display = 'flex';
+      setTimeout(() => {
+        arrow.style.display = 'none';
+      }, 5000);
+    }
+
+    // Attach event after DOM loaded
+    function attachWaitlistBtnHandler() {
+      // Attach to both hero states
+      const addHandler = () => {
+        const btn = document.getElementById('waitlist-btn');
+        if (btn) {
+          btn.onclick = bounceScreenAndShowArrow;
+        }
+      };
+      addHandler();
+      // Also re-attach after hero toggle
+      const origShowHero = window.showHero;
+      window.showHero = function(type) {
+        origShowHero(type);
+        addHandler();
+      };
+    }
+
     window.onload = function () {
       lucide.createIcons();
+      attachWaitlistBtnHandler();
     };
   </script>
+  <!-- Arrow for scroll prompt -->
+  <div id="scroll-arrow" style="display:none; position:fixed; left:0; right:0; bottom:24px; z-index:1000; pointer-events:none;" class="flex justify-center animate-bounce">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#FF7043] drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
 </body>
 
 </html>
