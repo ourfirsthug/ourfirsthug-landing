@@ -242,8 +242,20 @@
         padding-left: 10px !important;
         padding-right: 10px !important;
       }
+      .hero-section-mobile-pad {
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+      }
       h1, .hero-heading {
-        font-size: 46px;
+        font-size: 36px !important;
+        font-weight: 700 !important;
+        line-height: 1.15 !important;
+        letter-spacing: 0.01em;
+        margin-left: 8px !important;
+        margin-right: 8px !important;
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+        margin-bottom: 0.7em !important;
       }
       h2 {
         font-size: 32px;
@@ -254,7 +266,14 @@
         font-size: 20px;
       }
       .mobile-hero-para {
-        font-size: 17px !important;
+        font-size: 18px !important;
+        margin-bottom: 1.5em !important;
+        line-height: 1.7;
+        letter-spacing: 0.01em;
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
       }
       /* Responsive Contact Us buttons for mobile */
       .contact-btn {
@@ -269,10 +288,6 @@
       }
       .contact-btn {
         margin-right: 4px !important;
-      h1,
-      .hero-heading {
-        font-size: 42px;
-        font-weight: 700;
       }
       h2 {
         font-size: 24px;
@@ -284,12 +299,6 @@
       .main-btn {
         font-size: 14px;
         padding: 10px 18px;
-      }
-      .mobile-hero-para {
-        margin-bottom: 1.5em !important;
-        line-height: 1.7;
-        font-size: 15px !important;
-        letter-spacing: 0.01em;
       }
     }
 
@@ -327,7 +336,7 @@
   </nav>
 
   <!-- Hero Section with Toggle -->
-  <section class="py-8 sm:py-8 px-4 sm:px-6 max-w-7xl mx-auto text-sm sm:text-base">
+  <section class="py-8 sm:py-8 px-4 sm:px-6 max-w-7xl mx-auto text-sm sm:text-base hero-section-mobile-pad">
     <div class="flex flex-row flex-nowrap justify-center gap-2 mb-10 w-full px-1 sm:px-0">
       <button onclick="showHero('couple')" id="btn-couple"
         class="peer px-2 py-1 sm:px-4 sm:py-2 rounded-full border text-[#0D1B2A] font-medium hover:bg-gray-100 transition flex flex-row items-center gap-1 sm:gap-2 hover:scale-105 hover:shadow-sm duration-200 whitespace-nowrap text-xs sm:text-base min-w-0">
@@ -359,7 +368,7 @@
       <div id="hero-image">
         <img
           src="https://ourfirsthug-blog.s3.ap-south-1.amazonaws.com/blogcontent/c0d6fb1c-d4fe-46ea-9284-d6de5a9da418_final-wedding-prep-checklist-india.jpg.jpg"
-          alt="Couple Experience" class="rounded-2xl w-full max-h-[160px] sm:max-h-[300px] object-cover">
+          alt="Couple Experience" class="rounded-2xl w-full max-h-[220px] sm:max-h-[380px] object-cover">
       </div>
     </div>
 
@@ -368,20 +377,20 @@
       <div class="bg-gray-50 rounded-2xl shadow-sm p-5 sm:p-8">
         <h2 class="text-lg sm:text-3xl font-semibold mb-5 sm:mb-6 text-center">Join the Waitlist</h2>
         <form id="waitlistForm" class="space-y-5 sm:space-y-6">
-          <div id="nameField" class="hidden">
-            <label class="block mb-1 font-medium text-sm sm:text-base">Name</label>
-            <input type="text" id="name"
-              class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base"
-              placeholder="Your name">
-          </div>
-          <div>
-            <label class="block mb-1 font-medium text-sm sm:text-base">Email</label>
+          <div id="emailField">
+            <label class="block mb-1 font-medium text-sm sm:text-base">Email <span style="color:#F15C6D">*</span></label>
             <input type="email" id="email"
               class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base"
               placeholder="your@email.com">
           </div>
+          <div id="mobileField" class="hidden">
+            <label class="block mb-1 font-medium text-sm sm:text-base">Mobile <span style="color:#F15C6D">*</span></label>
+            <input type="tel" id="mobile"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base"
+              placeholder="10-digit mobile number" maxlength="10" pattern="[0-9]{10}">
+          </div>
           <div>
-            <label class="block mb-1 font-medium text-sm sm:text-base" id="dropdownLabel">City</label>
+            <label class="block mb-1 font-medium text-sm sm:text-base" id="dropdownLabel">City <span style="color:#F15C6D">*</span></label>
             <select id="dropdown"
               class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base">
               <option value="">Select an option</option>
@@ -508,11 +517,11 @@
     let currentType = 'photographer';
     showHero(currentType);
     function highlightSelected(type) {
-        document.getElementById('btn-couple').classList.remove('border-[#FF7043]', 'bg-orange-50');
-        document.getElementById('btn-photographer').classList.remove('border-[#FF7043]', 'bg-orange-50');
+        document.getElementById('btn-couple').classList.remove('border-[#FF7043]', 'bg-orange-50', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
+        document.getElementById('btn-photographer').classList.remove('border-[#FF7043]', 'bg-orange-50', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
 
         const selectedBtn = document.getElementById('btn-' + type);
-        selectedBtn.classList.add('border-[#FF7043]', 'bg-orange-50');
+        selectedBtn.classList.add('border-[#FF7043]', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
       }
 
     function showHero(type) {
@@ -520,28 +529,30 @@
       currentType = type;
       const image = document.getElementById("hero-image");
       const content = document.getElementById("hero-content");
-      const nameField = document.getElementById("nameField");
+      // Name field removed
+      const emailField = document.getElementById("emailField");
+      const mobileField = document.getElementById("mobileField");
       const dropdownLabel = document.getElementById("dropdownLabel");
 
       if (type === 'couple') {
-        image.innerHTML = '<img src="https://ourfirsthug-blog.s3.ap-south-1.amazonaws.com/blogcontent/c0d6fb1c-d4fe-46ea-9284-d6de5a9da418_final-wedding-prep-checklist-india.jpg.jpg" alt="Couple Experience" class="rounded-2xl w-full max-h-[160px] sm:max-h-[300px] object-cover">';
+        image.innerHTML = '<img src="couple.png" alt="Couple Experience" class="rounded-2xl w-full max-h-[220px] sm:max-h-[380px] object-cover">';
         content.innerHTML = `
           <h1 class="text-2xl sm:text-4xl md:text-5xl font-medium mb-2 sm:mb-4 leading-tight">
             Find your <span class='text-[#FF7043]'>perfect</span><br>
             wedding photographer<br>
             quickly and easily.
           </h1>
-          <p class="text-sm sm:text-lg mb-3 mobile-hero-para">Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?</p>
-          <p class="text-sm sm:text-lg mb-3 mobile-hero-para">We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.</p>
+          <p class="text-sm sm:text-lg mb-3 mobile-hero-para">We’re building a platform to find trusted photographers with stunning work at prices that make sense.</p>
           <div class='flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start items-center mb-2'>
             <a id="download-btn" href="/brochures/couple.pdf" download class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
             <button id="waitlist-btn" type="button" tabindex="0" class="px-4 sm:px-6 py-2 sm:py-3 bg-white border border-[#FF7043] text-[#FF7043] rounded-lg font-semibold hover:bg-orange-50 transition text-xs sm:text-base flex items-center gap-2">Join the Waitlist</button>
           </div>
         `;
-        nameField.classList.add("hidden");
-        dropdownLabel.textContent = "City";
+        emailField.classList.remove("hidden");
+        mobileField.classList.add("hidden");
+        dropdownLabel.innerHTML = "City <span style='color:#F15C6D'>*</span>";
       } else {
-        image.innerHTML = '<img src="https://ourfirsthug-blog.s3.ap-south-1.amazonaws.com/blogcontent/271650b9-09b6-4c4d-bcb6-81f2a06e740d_wedding-checklist-india-outfits-vendors.jpg.jpg" alt="Photographer Experience" class="rounded-2xl w-full max-h-[160px] sm:max-h-[300px] object-cover">';
+        image.innerHTML = '<img src="photographer_main.jpg" alt="Photographer Experience" class="rounded-2xl w-full max-h-[220px] sm:max-h-[380px] object-cover">';
         content.innerHTML = `
           <h1 class="text-2xl sm:text-4xl md:text-5xl font-medium mb-2 sm:mb-4 leading-tight">
             Get discovered,<br>
@@ -549,27 +560,47 @@
             by couples who truly<br>
             value your work
           </h1>
-          <p class="text-sm sm:text-lg mb-3">Tired of clients not paying after delivery or rejecting your rates?</p>
-          <p class="text-sm sm:text-lg mb-3">We’re building a platform where you don’t have to justify your pricing or chase overdue payments. Just real bookings from respectful couples who value your work and pay the full amount-on time.</p>
+          <p class="text-sm sm:text-lg mb-3">We’re building a platform where you can attract high-paying clients, manage everything in one place and get fully paid — on time, every time.</p>
           <div class='flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start items-center mb-2'>
             <a id="download-btn" href="/brochures/photographer.pdf" download class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
             <button id="waitlist-btn" type="button" class="px-4 sm:px-6 py-2 sm:py-3 bg-white border border-[#FF7043] text-[#FF7043] rounded-lg font-semibold hover:bg-orange-50 transition text-xs sm:text-base flex items-center gap-2">Join the Waitlist</button>
           </div>
         `;
-        nameField.classList.remove("hidden");
-        dropdownLabel.textContent = "Location";
+        emailField.classList.remove("hidden");
+        mobileField.classList.remove("hidden");
+        dropdownLabel.innerHTML = "Location <span style='color:#F15C6D'>*</span>";
       }
+    // Prevent non-digit input in mobile field
+    const mobileInput = document.getElementById("mobile");
+    if (mobileInput) {
+      mobileInput.addEventListener("input", function(e) {
+        this.value = this.value.replace(/\D/g, "");
+      });
+    }
       validateForm();
       lucide.createIcons();
     }
 
     function validateForm() {
       const email = document.getElementById("email").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
       const dropdown = document.getElementById("dropdown").value;
-      const name = document.getElementById("name");
+      // Name field removed
       const submitBtn = document.getElementById("submitBtn");
-      const isPhotographer = currentType === 'photographer';
-      const valid = email && dropdown && (!isPhotographer || name.value.trim());
+      let valid = false;
+      if (currentType === 'photographer') {
+        // Validate mobile (10 digits), email, and dropdown
+        const mobileValid = /^\d{10}$/.test(mobile);
+        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        valid = email && emailValid && mobileValid && dropdown;
+        document.getElementById("mobile").setCustomValidity(mobileValid || !mobile ? '' : 'Enter a valid 10-digit mobile number');
+        document.getElementById("email").setCustomValidity(emailValid || !email ? '' : 'Enter a valid email address');
+      } else {
+        // Validate email and dropdown
+        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        valid = email && emailValid && dropdown;
+        document.getElementById("email").setCustomValidity(emailValid || !email ? '' : 'Enter a valid email address');
+      }
       submitBtn.disabled = !valid;
       submitBtn.className = valid ? "w-full bg-[#FF7043] text-white px-6 py-3 rounded-lg font-semibold transition hover:bg-[#F15C6D]" : "w-full bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold transition";
     }
@@ -578,21 +609,82 @@
 
     document.getElementById("waitlistForm").addEventListener("submit", function (e) {
       e.preventDefault();
-      const data = {
-        type: currentType,
-        email: document.getElementById("email").value,
-        dropdown: document.getElementById("dropdown").value,
-        ...(currentType === 'photographer' && { name: document.getElementById("name").value })
-      };
-      console.log("Submitting: ", JSON.stringify(data));
-      alert("Thank you! We'll be in touch soon.");
+      const email = document.getElementById("email").value.trim();
+      // Name field removed
+      const city = document.getElementById("dropdown").value;
+      const mobile = document.getElementById("mobile").value.trim();
+      let payload = { };
 
-      // Reset form
-      document.getElementById("email").value = "";
-      document.getElementById("dropdown").value = "";
-      if (currentType === 'photographer') document.getElementById("name").value = "";
-      validateForm();
+      if (currentType === 'photographer') {
+        payload.email = email;
+        payload.mobile = mobile;
+        payload.city = city;
+      }
+
+      if (currentType === 'couple') {
+        payload.email = email;
+        payload.city = city;
+      }
+
+      let emailData = {
+        to: email,
+        city: city,
+        mobile: payload.mobile,
+        selectedType: currentType
+      };
+
+      const submitBtn = document.getElementById("submitBtn");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+
+      fetch('https://script.google.com/macros/s/AKfycbzWmeaaBp9tYFU3anHDIOttfLsydX7aV4ybvtKW9ej9yCZcoSowp3n_8clzzLcjGSdh_w/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        let message = currentType === "couple"
+          ? "You’re on the list! We’ll reach out soon with early access so you can find your perfect photographer."
+          : "You’re in! We’ll reach out soon when early access opens in your city.";
+        alert(message);
+        document.getElementById("waitlistForm").reset();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert("Something went wrong. Please try again later.");
+      })
+      .finally(() => {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Submit";
+        sendEmail(emailData);
+      });
+});
+
+    
+
+    function sendEmail(emailData) {
+    return new Promise((resolve, reject) => {
+        fetch('https://ourfirsthug-email.onrender.com/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(emailData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Email sent successfully:", data);
+                resolve(data);
+            })
+            .catch(error => {
+                console.error("Error sending email:", error);
+                reject(error);
+            });
     });
+}
 
     // Waitlist button bounce and scroll arrow logic
     function bounceScreenAndShowArrow(e) {
