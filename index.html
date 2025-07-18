@@ -220,6 +220,7 @@
 
     /* Responsive hero heading */
     @media (max-width: 900px) {
+
       h1,
       .hero-heading {
         font-size: 40px;
@@ -238,15 +239,19 @@
       body {
         font-size: 18px;
       }
+
       section {
         padding-left: 10px !important;
         padding-right: 10px !important;
       }
+
       .hero-section-mobile-pad {
         margin-left: 12px !important;
         margin-right: 12px !important;
       }
-      h1, .hero-heading {
+
+      h1,
+      .hero-heading {
         font-size: 36px !important;
         font-weight: 700 !important;
         line-height: 1.15 !important;
@@ -259,14 +264,17 @@
         text-align: left !important;
         word-break: break-word !important;
       }
+
       h2 {
         font-size: 32px;
         font-weight: 700;
         letter-spacing: 0.01em;
       }
+
       h3 {
         font-size: 20px;
       }
+
       .mobile-hero-para {
         font-size: 18px !important;
         margin-bottom: 1.5em !important;
@@ -279,19 +287,24 @@
         text-align: left !important;
         word-break: break-word !important;
       }
-      #btn-couple, #btn-photographer {
+
+      #btn-couple,
+      #btn-photographer {
         font-size: 13px !important;
         padding: 7px 10px !important;
         min-width: 0 !important;
         max-width: 95vw !important;
         box-sizing: border-box !important;
       }
-      #btn-couple img, #btn-photographer img {
+
+      #btn-couple img,
+      #btn-photographer img {
         width: 16px !important;
         height: 16px !important;
         margin-left: 6px !important;
         margin-right: 0 !important;
       }
+
       /* Responsive Contact Us buttons for mobile */
       .contact-btn {
         width: 100% !important;
@@ -300,18 +313,23 @@
         font-size: 15px !important;
         margin-bottom: 0 !important;
       }
+
       .contact-btn i {
         font-size: 20px !important;
       }
+
       .contact-btn {
         margin-right: 4px !important;
       }
+
       h2 {
         font-size: 24px;
       }
+
       h3 {
         font-size: 18px;
       }
+
       .btn,
       .main-btn {
         font-size: 14px;
@@ -329,12 +347,15 @@
     h4 {
       font-family: 'Cormorant Garamond', serif;
     }
-    #btn-couple, #btn-photographer {
-        font-size: 15px !important;
-        padding: 8px 18px !important;
-      }
+
+    #btn-couple,
+    #btn-photographer {
+      font-size: 15px !important;
+      padding: 8px 18px !important;
+    }
   </style>
-      <body class="bg-white text-[#0D1B2A]">
+
+<body class="bg-white text-[#0D1B2A]">
   <nav class="sticky top-0 z-50 bg-white shadow-sm py-4">
     <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
       <!-- Logo -->
@@ -357,12 +378,14 @@
     <div class="flex flex-row flex-nowrap justify-center gap-2 mb-10 w-full px-1 sm:px-0">
       <button onclick="showHero('couple')" id="btn-couple"
         class="peer px-2 py-1 sm:px-4 sm:py-2 rounded-full border text-[#0D1B2A] font-medium hover:bg-gray-100 transition flex flex-row items-center justify-center gap-2 hover:scale-105 hover:shadow-sm duration-200 whitespace-nowrap text-xs sm:text-base min-w-0">
-         <img src="couple_logo.jpeg" class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110 mr-2"
-          alt="Couple Icon"> <span style="display:inline-block;vertical-align:middle;">Couples & Families</span>
+        <img src="couple_logo.jpeg"
+          class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110 mr-2" alt="Couple Icon">
+        <span style="display:inline-block;vertical-align:middle;">Couples & Families</span>
       </button>
       <button onclick="showHero('photographer')" id="btn-photographer"
         class="peer px-2 py-1 sm:px-4 sm:py-2 rounded-full border text-[#0D1B2A] font-medium hover:bg-gray-100 transition flex flex-row items-center justify-center gap-2 hover:scale-105 hover:shadow-sm duration-200 whitespace-nowrap text-xs sm:text-base min-w-0">
-        <img src="photographer.jpg" class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110 mr-2"
+        <img src="photographer.jpg"
+          class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110 mr-2"
           alt="Photographer Icon"> <span style="display:inline-block;vertical-align:middle;">I'm a Photographer</span>
       </button>
     </div>
@@ -373,11 +396,18 @@
           wedding photographer<br>
           quickly and easily.
         </h1>
-        <p class="text-sm sm:text-lg mb-3 mobile-hero-para">Tired of endless calls, fake reviews, and overpriced photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your once-in-a-lifetime moments?</p>
-        <p class="text-sm sm:text-lg mb-3 mobile-hero-para">We’re building a simpler way to find photographers you can trust—talented, transparent, and truly aligned with your story.</p>
+        <p class="text-sm sm:text-lg mb-3 mobile-hero-para">Tired of endless calls, fake reviews, and overpriced
+          photographers? Or worse—the fear of hiring someone with terrible work quality who ruins your
+          once-in-a-lifetime moments?</p>
+        <p class="text-sm sm:text-lg mb-3 mobile-hero-para">We’re building a simpler way to find photographers you can
+          trust—talented, transparent, and truly aligned with your story.</p>
         <div class='flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start items-center mb-2'>
-          <a id="download-btn" href="/brochures/couple.pdf" download class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download Brochure</a>
-          <button id="waitlist-btn" type="button" tabindex="0" class="px-4 sm:px-6 py-2 sm:py-3 bg-white border border-[#FF7043] text-[#FF7043] rounded-lg font-semibold hover:bg-orange-50 transition text-xs sm:text-base flex items-center gap-2">Join the Waitlist</button>
+          <a id="download-btn" href="/brochures/couple.pdf" download
+            class="px-4 sm:px-6 py-2 sm:py-3 bg-[#FF7043] text-white rounded-lg font-semibold hover:bg-[#F15C6D] transition text-xs sm:text-base">Download
+            Brochure</a>
+          <button id="waitlist-btn" type="button" tabindex="0"
+            class="px-4 sm:px-6 py-2 sm:py-3 bg-white border border-[#FF7043] text-[#FF7043] rounded-lg font-semibold hover:bg-orange-50 transition text-xs sm:text-base flex items-center gap-2">Join
+            the Waitlist</button>
         </div>
       </div>
       <div id="hero-image">
@@ -393,26 +423,135 @@
         <h2 class="text-lg sm:text-3xl font-semibold mb-5 sm:mb-6 text-center">Join the Waitlist</h2>
         <form id="waitlistForm" class="space-y-5 sm:space-y-6">
           <div id="emailField">
-            <label class="block mb-1 font-medium text-sm sm:text-base">Email <span style="color:#F15C6D">*</span></label>
+            <label class="block mb-1 font-medium text-sm sm:text-base">Email <span
+                style="color:#F15C6D">*</span></label>
             <input type="email" id="email"
               class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base"
               placeholder="your@email.com">
           </div>
           <div id="mobileField" class="hidden">
-            <label class="block mb-1 font-medium text-sm sm:text-base">Mobile <span style="color:#F15C6D">*</span></label>
+            <label class="block mb-1 font-medium text-sm sm:text-base">Mobile <span
+                style="color:#F15C6D">*</span></label>
             <input type="tel" id="mobile"
               class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base"
               placeholder="10-digit mobile number" maxlength="10" pattern="[0-9]{10}">
           </div>
           <div>
-            <label class="block mb-1 font-medium text-sm sm:text-base" id="dropdownLabel">City <span style="color:#F15C6D">*</span></label>
+            <label class="block mb-1 font-medium text-sm sm:text-base" id="dropdownLabel">City <span
+                style="color:#F15C6D">*</span></label>
             <select id="dropdown"
               class="w-full border border-gray-300 rounded-lg px-4 py-2 sm:px-4 sm:py-2 text-sm sm:text-base">
               <option value="">Select an option</option>
+              <option value="" disabled selected>Select your city</option>
+              <option value="Agra">Agra</option>
+              <option value="Ahmedabad">Ahmedabad</option>
+              <option value="Ajmer">Ajmer</option>
+              <option value="Aligarh">Aligarh</option>
+              <option value="Amravati">Amravati</option>
+              <option value="Amritsar">Amritsar</option>
+              <option value="Asansol">Asansol</option>
+              <option value="Aurangabad">Aurangabad</option>
+              <option value="Bareilly">Bareilly</option>
+              <option value="Belgaum">Belgaum</option>
+              <option value="Bhavnagar">Bhavnagar</option>
+              <option value="Bhiwandi">Bhiwandi</option>
+              <option value="Bhopal">Bhopal</option>
+              <option value="Bhubaneswar">Bhubaneswar</option>
+              <option value="Bilaspur">Bilaspur</option>
+              <option value="Bokaro Steel City">Bokaro Steel City</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Coimbatore">Coimbatore</option>
+              <option value="Cuttack">Cuttack</option>
+              <option value="Dehradun">Dehradun</option>
               <option value="Delhi">Delhi</option>
+              <option value="Dhanbad">Dhanbad</option>
+              <option value="Durgapur">Durgapur</option>
+              <option value="Erode">Erode</option>
+              <option value="Faridabad">Faridabad</option>
+              <option value="Firozabad">Firozabad</option>
+              <option value="Gandhinagar">Gandhinagar</option>
+              <option value="Gaya">Gaya</option>
+              <option value="Ghaziabad">Ghaziabad</option>
+              <option value="Gorakhpur">Gorakhpur</option>
+              <option value="Guntur">Guntur</option>
+              <option value="Gwalior">Gwalior</option>
+              <option value="Hisar">Hisar</option>
+              <option value="Hubli-Dharwad">Hubli-Dharwad</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Indore">Indore</option>
+              <option value="Jabalpur">Jabalpur</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Jalandhar">Jalandhar</option>
+              <option value="Jammu">Jammu</option>
+              <option value="Jamnagar">Jamnagar</option>
+              <option value="Jamshedpur">Jamshedpur</option>
+              <option value="Jhansi">Jhansi</option>
+              <option value="Jodhpur">Jodhpur</option>
+              <option value="Kakinada">Kakinada</option>
+              <option value="Kannur">Kannur</option>
+              <option value="Kanpur">Kanpur</option>
+              <option value="Karimnagar">Karimnagar</option>
+              <option value="Karnal">Karnal</option>
+              <option value="Kochi">Kochi</option>
+              <option value="Kolhapur">Kolhapur</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Kollam">Kollam</option>
+              <option value="Kota">Kota</option>
+              <option value="Kozhikode">Kozhikode</option>
+              <option value="Kurnool">Kurnool</option>
+              <option value="Lucknow">Lucknow</option>
+              <option value="Ludhiana">Ludhiana</option>
+              <option value="Madurai">Madurai</option>
+              <option value="Malappuram">Malappuram</option>
+              <option value="Mangalore">Mangalore</option>
+              <option value="Mathura">Mathura</option>
+              <option value="Meerut">Meerut</option>
+              <option value="Moradabad">Moradabad</option>
+              <option value="Muzaffarpur">Muzaffarpur</option>
               <option value="Mumbai">Mumbai</option>
-              <option value="Bangalore">Bangalore</option>
-              <option value="Goa">Goa</option>
+              <option value="Mysore">Mysore</option>
+              <option value="Nagpur">Nagpur</option>
+              <option value="Nanded">Nanded</option>
+              <option value="Nashik">Nashik</option>
+              <option value="Nellore">Nellore</option>
+              <option value="Noida">Noida</option>
+              <option value="Patna">Patna</option>
+              <option value="Pondicherry">Pondicherry</option>
+              <option value="Prayagraj (Allahabad)">Prayagraj (Allahabad)</option>
+              <option value="Pune">Pune</option>
+              <option value="Raichur">Raichur</option>
+              <option value="Raipur">Raipur</option>
+              <option value="Rajahmundry">Rajahmundry</option>
+              <option value="Rajkot">Rajkot</option>
+              <option value="Ranchi">Ranchi</option>
+              <option value="Rourkela">Rourkela</option>
+              <option value="Saharanpur">Saharanpur</option>
+              <option value="Salem">Salem</option>
+              <option value="Sangli">Sangli</option>
+              <option value="Satara">Satara</option>
+              <option value="Shillong">Shillong</option>
+              <option value="Shimla">Shimla</option>
+              <option value="Siliguri">Siliguri</option>
+              <option value="Solapur">Solapur</option>
+              <option value="Srinagar">Srinagar</option>
+              <option value="Surat">Surat</option>
+              <option value="Thanjavur">Thanjavur</option>
+              <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+              <option value="Thrissur">Thrissur</option>
+              <option value="Tiruchirappalli">Tiruchirappalli</option>
+              <option value="Tirunelveli">Tirunelveli</option>
+              <option value="Tirupati">Tirupati</option>
+              <option value="Tiruppur">Tiruppur</option>
+              <option value="Tumakuru">Tumakuru</option>
+              <option value="Udaipur">Udaipur</option>
+              <option value="Ujjain">Ujjain</option>
+              <option value="Vadodara">Vadodara</option>
+              <option value="Varanasi">Varanasi</option>
+              <option value="Vellore">Vellore</option>
+              <option value="Vijayawada">Vijayawada</option>
+              <option value="Visakhapatnam">Visakhapatnam</option>
+              <option value="Warangal">Warangal</option>
             </select>
           </div>
           <button type="submit" id="submitBtn" disabled
@@ -422,7 +561,8 @@
     </div>
 
     <!-- About Us -->
-    <div class="mt-16 sm:mt-28 max-w-3xl mx-auto px-4 sm:px-0 bg-[#faf7f5] border-l-4 border-[#FF7043] rounded-xl shadow-sm">
+    <div
+      class="mt-16 sm:mt-28 max-w-3xl mx-auto px-4 sm:px-0 bg-[#faf7f5] border-l-4 border-[#FF7043] rounded-xl shadow-sm">
       <h2 class="text-lg sm:text-3xl font-semibold mb-5 sm:mb-8 text-center pt-6">About Us</h2>
       <div class="flex flex-row justify-center items-center gap-6 sm:gap-12 mb-4">
         <!-- Founder 1 -->
@@ -431,20 +571,21 @@
           <h3 class="text-base sm:text-lg font-semibold mb-0.5">Divyansh Nigam</h3>
           <span class="text-xs sm:text-sm text-gray-500 mb-1">Co-founder & CEO</span>
           <div class="flex gap-2 mb-1">
-            <a href="https://www.linkedin.com/in/nigamdivyansh/" target="_blank" class="text-gray-500 hover:text-blue-700"><i
-                class="fab fa-linkedin text-xl"></i></a>
-            <a href="https://www.instagram.com/divyanshssss/" target="_blank" class="text-gray-500 hover:text-pink-500"><i
-                class="fab fa-instagram text-xl"></i></a>
+            <a href="https://www.linkedin.com/in/nigamdivyansh/" target="_blank"
+              class="text-gray-500 hover:text-blue-700"><i class="fab fa-linkedin text-xl"></i></a>
+            <a href="https://www.instagram.com/divyanshssss/" target="_blank"
+              class="text-gray-500 hover:text-pink-500"><i class="fab fa-instagram text-xl"></i></a>
           </div>
         </div>
         <!-- Founder 2 -->
         <div class="flex flex-col items-center">
-          <img src="CTO.jpeg" class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-1 shadow" alt="Rohit Khanna">
+          <img src="CTO.jpeg" class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-1 shadow"
+            alt="Rohit Khanna">
           <h3 class="text-base sm:text-lg font-semibold mb-0.5">Aman Pandey</h3>
           <span class="text-xs sm:text-sm text-gray-500 mb-1">Co-founder & CTO</span>
           <div class="flex gap-2 mb-1">
-            <a href="https://www.linkedin.com/in/aman-pandey-2478ab162/" target="_blank" class="text-gray-500 hover:text-blue-700"><i
-                class="fab fa-linkedin text-xl"></i></a>
+            <a href="https://www.linkedin.com/in/aman-pandey-2478ab162/" target="_blank"
+              class="text-gray-500 hover:text-blue-700"><i class="fab fa-linkedin text-xl"></i></a>
             <a href="https://www.instagram.com/theampy/" target="_blank" class="text-gray-500 hover:text-pink-500"><i
                 class="fab fa-instagram text-xl"></i></a>
           </div>
@@ -452,22 +593,30 @@
       </div>
       <div class="bg-white/90 rounded-xl p-4 sm:p-6 text-left text-gray-700 text-base sm:text-lg shadow-sm mb-6">
         <p>
-          Weddings are once-in-a-lifetime — and your memories deserve to be captured beautifully, effortlessly, and honestly. Yet, finding the right photographer often feels frustrating: inflated prices, fake reviews, and portfolios that don’t match expectations. On the other side, talented photographers struggle to find genuine clients who value their craft.
+          Weddings are once-in-a-lifetime — and your memories deserve to be captured beautifully, effortlessly, and
+          honestly. Yet, finding the right photographer often feels frustrating: inflated prices, fake reviews, and
+          portfolios that don’t match expectations. On the other side, talented photographers struggle to find genuine
+          clients who value their craft.
         </p>
         <div class="my-4">
           <strong class="text-[#FF7043] block text-base sm:text-lg">ourfirsthug was born from this gap.</strong>
         </div>
         <p>
-          We’re building a curated platform where love meets trust — a seamless space for couples to discover professional photographers who fit their style and budget, and for photographers to showcase their artistry, build packages, and secure meaningful work.
+          We’re building a curated platform where love meets trust — a seamless space for couples to discover
+          professional photographers who fit their style and budget, and for photographers to showcase their artistry,
+          build packages, and secure meaningful work.
         </p>
         <p>
-          Behind this is Divyansh Nigam, who spent 2+ years working alongside wedding photographers and saw the pain points up close. Alongside him is Aman Pandey, who has a deep passion for clean, user-first experiences and a strong background in building reliable digital products that scale.
+          Behind this is Divyansh Nigam, who spent 2+ years working alongside wedding photographers and saw the pain
+          points up close. Alongside him is Aman Pandey, who has a deep passion for clean, user-first experiences and a
+          strong background in building reliable digital products that scale.
         </p>
         <div class="my-4">
           <strong>Together, we’re on a mission to bring clarity, elegance and ease to wedding memories.</strong>
         </div>
         <p>
-          <strong class="text-[#FF7043] block text-base sm:text-lg">Because your first hug as a married couple deserves to be captured by someone who truly sees it.</strong>
+          <strong class="text-[#FF7043] block text-base sm:text-lg">Because your first hug as a married couple deserves
+            to be captured by someone who truly sees it.</strong>
         </p>
       </div>
     </div>
@@ -475,17 +624,20 @@
   <section class="bg-white py-6 sm:py-12">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-lg sm:text-2xl font-semibold text-[#FF7043] mb-3 sm:mb-6">Contact Us</h2>
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-gray-700 text-base sm:text-lg">
+      <div
+        class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-gray-700 text-base sm:text-lg">
         <a href="https://wa.me/+919454896974" target="_blank"
           class="contact-btn flex items-center gap-3 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
           <i class="fab fa-whatsapp text-2xl text-[#25D366]"></i>
           <span class="font-semibold">WhatsApp</span>
         </a>
-        <a href="mailto:hello@ourfirsthug.com" class="contact-btn flex items-center gap-3 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
+        <a href="mailto:hello@ourfirsthug.com"
+          class="contact-btn flex items-center gap-3 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
           <i class="fas fa-envelope text-2xl text-[#FF7043]"></i>
           <span class="font-semibold">Email</span>
         </a>
-        <a href="tel:+919454896974" class="contact-btn flex items-center gap-3 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
+        <a href="tel:+919454896974"
+          class="contact-btn flex items-center gap-3 hover:bg-[#CADABA] hover:text-[#0D1B2A] transition rounded-lg px-4 py-2 shadow-sm border border-[#CADABA]">
           <i class="fas fa-phone text-2xl text-[#0D1B2A]"></i>
           <span class="font-semibold">Call</span>
         </a>
@@ -518,7 +670,8 @@
           <a href="https://youtube.com/@ourfirsthug" target="_blank" class="text-gray-600 hover:text-red-600">
             <i class="fab fa-youtube text-xl"></i>
           </a>
-          <a href="https://www.instagram.com/ourfirsthugofficial" target="_blank" class="text-gray-600 hover:text-pink-500">
+          <a href="https://www.instagram.com/ourfirsthugofficial" target="_blank"
+            class="text-gray-600 hover:text-pink-500">
             <i class="fab fa-instagram text-xl"></i>
           </a>
         </div>
@@ -528,16 +681,16 @@
   </footer>
 
   <script>
-    
+
     let currentType = 'photographer';
     showHero(currentType);
     function highlightSelected(type) {
-        document.getElementById('btn-couple').classList.remove('border-[#FF7043]', 'bg-orange-50', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
-        document.getElementById('btn-photographer').classList.remove('border-[#FF7043]', 'bg-orange-50', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
+      document.getElementById('btn-couple').classList.remove('border-[#FF7043]', 'bg-orange-50', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
+      document.getElementById('btn-photographer').classList.remove('border-[#FF7043]', 'bg-orange-50', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
 
-        const selectedBtn = document.getElementById('btn-' + type);
-        selectedBtn.classList.add('border-[#FF7043]', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
-      }
+      const selectedBtn = document.getElementById('btn-' + type);
+      selectedBtn.classList.add('border-[#FF7043]', 'ring-2', 'ring-[#FF7043]', 'bg-[#FFF3ED]', 'shadow-md');
+    }
 
     function showHero(type) {
       highlightSelected(type);
@@ -584,13 +737,13 @@
         mobileField.classList.remove("hidden");
         dropdownLabel.innerHTML = "Location <span style='color:#F15C6D'>*</span>";
       }
-    // Prevent non-digit input in mobile field
-    const mobileInput = document.getElementById("mobile");
-    if (mobileInput) {
-      mobileInput.addEventListener("input", function(e) {
-        this.value = this.value.replace(/\D/g, "");
-      });
-    }
+      // Prevent non-digit input in mobile field
+      const mobileInput = document.getElementById("mobile");
+      if (mobileInput) {
+        mobileInput.addEventListener("input", function (e) {
+          this.value = this.value.replace(/\D/g, "");
+        });
+      }
       validateForm();
       lucide.createIcons();
     }
@@ -627,7 +780,7 @@
       // Name field removed
       const city = document.getElementById("dropdown").value;
       const mobile = document.getElementById("mobile").value.trim();
-      let payload = { };
+      let payload = {};
 
       if (currentType === 'photographer') {
         payload.email = email;
@@ -659,46 +812,46 @@
         },
         body: JSON.stringify(payload)
       })
-      .then(() => {
-        let message = currentType === "couple"
-          ? "You’re on the list! We’ll reach out soon with early access so you can find your perfect photographer."
-          : "You’re in! We’ll reach out soon when early access opens in your city.";
-        alert(message);
-        document.getElementById("waitlistForm").reset();
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        alert("Something went wrong. Please try again later.");
-      })
-      .finally(() => {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Submit";
-        sendEmail(emailData);
-      });
-});
+        .then(() => {
+          let message = currentType === "couple"
+            ? "You’re on the list! We’ll reach out soon with early access so you can find your perfect photographer."
+            : "You’re in! We’ll reach out soon when early access opens in your city.";
+          alert(message);
+          document.getElementById("waitlistForm").reset();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert("Something went wrong. Please try again later.");
+        })
+        .finally(() => {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Submit";
+          sendEmail(emailData);
+        });
+    });
 
-    
+
 
     function sendEmail(emailData) {
-    return new Promise((resolve, reject) => {
+      return new Promise((resolve, reject) => {
         fetch('https://ourfirsthug-email.onrender.com/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(emailData)
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(emailData)
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Email sent successfully:", data);
-                resolve(data);
-            })
-            .catch(error => {
-                console.error("Error sending email:", error);
-                reject(error);
-            });
-    });
-}
+          .then(response => response.json())
+          .then(data => {
+            console.log("Email sent successfully:", data);
+            resolve(data);
+          })
+          .catch(error => {
+            console.error("Error sending email:", error);
+            reject(error);
+          });
+      });
+    }
 
     // Waitlist button bounce and scroll arrow logic
     function bounceScreenAndShowArrow(e) {
@@ -732,7 +885,7 @@
       addHandler();
       // Also re-attach after hero toggle
       const origShowHero = window.showHero;
-      window.showHero = function(type) {
+      window.showHero = function (type) {
         origShowHero(type);
         addHandler();
       };
@@ -744,11 +897,13 @@
     };
   </script>
   <!-- Arrow for scroll prompt -->
-  <div id="scroll-arrow" style="display:none; position:fixed; left:0; right:0; bottom:24px; z-index:1000; pointer-events:none;" class="flex justify-center animate-bounce">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#FF7043] drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <div id="scroll-arrow"
+    style="display:none; position:fixed; left:0; right:0; bottom:24px; z-index:1000; pointer-events:none;"
+    class="flex justify-center animate-bounce">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#FF7043] drop-shadow-lg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
     </svg>
   </div>
 </body>
-
 </html>
